@@ -24,11 +24,17 @@ extension UIView {
     func setCellShadow() {
         self.layer.shadowColor = UIColor.lightGray.cgColor
         self.layer.shadowOffset = CGSize(width: 10, height: 8)
-        self.layer.shadowOpacity = 0.15
+        self.layer.shadowOpacity = 0.85
         self.layer.shadowRadius = 2.0
         self.layer.masksToBounds = false
         self.clipsToBounds = false
         self.layer.cornerRadius = 4
+    }
+    
+    func removeShadow() {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = .none
+        self.clipsToBounds = true
     }
     //make any UIView have a sircular border
     func makeCircle(size: CGFloat) {
@@ -277,6 +283,11 @@ extension UIView {
     
     static var username : String = ""
     
+    func addContent(_ label : UILabel) {
+        self.addSubview(label)
+        label.frame = .zero
+    }
+    
 }
 
 extension UITabBarController {
@@ -304,7 +315,7 @@ public extension UIColor {
     static var offWhite = UIColor(red:0.98, green:0.98, blue:0.99, alpha:1.0)
     static var offGray = UIColor(red:0.27, green:0.27, blue:0.27, alpha:1.0)
     static var randomRed = UIColor(red:0.60, green:0.00, blue:0.20, alpha:1.0)
-    static var DarkGray = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
+    static var darkGray = UIColor(red:0.29, green:0.29, blue:0.29, alpha:1.0)
     
     //opacity 50%
     static var mainBlueHalf = UIColor(red:0.38, green:0.44, blue:0.99, alpha:0.5)

@@ -18,9 +18,10 @@ class ExploreViewController : UIViewController {
         let tb = UITableView()
         tb.isPagingEnabled = false
         tb.translatesAutoresizingMaskIntoConstraints = false
-        tb.allowsSelection = false
+        tb.separatorStyle = .none
+        tb.showsVerticalScrollIndicator = false
         tb.backgroundColor = .offWhite
-
+        
         return tb
     }()
     
@@ -29,6 +30,7 @@ class ExploreViewController : UIViewController {
         lbl.text = "Savings"
         lbl.font = .boldSystemFont(ofSize: 32)
         lbl.textColor = .darkGray
+        
         return lbl
     }()
     
@@ -51,7 +53,6 @@ class ExploreViewController : UIViewController {
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
         
         if hour <= 11 {
             welcomeLabel.text = "Good Morning, Gifton"
@@ -60,8 +61,6 @@ class ExploreViewController : UIViewController {
         } else if hour <= 24 {
             welcomeLabel.text =  "Good evening, Gifton"
         }
-        
-        print (hour, minutes)
     }
     
     func setupTableView() {
@@ -84,17 +83,18 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            cell.title.text = "Time..."
-            cell.card.backgroundColor = UIColor.mainOrangeHalf
+            cell.mainCardView = TimeView(frame: .zero)
+            cell.card.backgroundColor = .darkGray
+            cell.title.text = "Time"
         case 1:
             cell.title.text = "Weather"
-            cell.card.backgroundColor = UIColor.mainBlueHalf
+            cell.card.backgroundColor = UIColor.mainOrange
         case 2:
             cell.title.text = "Tasks"
-            cell.card.backgroundColor = UIColor.mainYellowHalf
+            cell.card.backgroundColor = UIColor.mainYellow
         case 3:
             cell.title.text = "Savings"
-            cell.card.backgroundColor = UIColor.mainGreenHalf
+            cell.card.backgroundColor = UIColor.mainGreen
         default:
             cell.title.text = "Something went wrong"
         }
