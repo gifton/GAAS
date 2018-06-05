@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SwiftSky
 
 class ExploreViewController : UIViewController {
     
-    
+    static var API_KEY = "0e9b8e3d52606fad9bc70e04d38049de"
     
     let tableViewCellIdentifier = "tableVIewCell1"
     
@@ -20,7 +21,9 @@ class ExploreViewController : UIViewController {
         tb.translatesAutoresizingMaskIntoConstraints = false
         tb.separatorStyle = .none
         tb.showsVerticalScrollIndicator = false
-        tb.backgroundColor = .offWhite
+        tb.allowsSelection = false
+        tb.backgroundColor = .mainGray
+        tb.layer.cornerRadius = 20
         
         return tb
     }()
@@ -30,16 +33,31 @@ class ExploreViewController : UIViewController {
         lbl.text = "Savings"
         lbl.font = .boldSystemFont(ofSize: 32)
         lbl.textColor = .darkGray
-        
+        lbl.addBorders(edges: [.bottom], color: .darkGray, thickness: 3)
         return lbl
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = .mainGray
+        view.backgroundColor = .white
         setupTableView()
         welcome()
+        SwiftSky.secret = ExploreViewController.API_KEY
+        getWeather()
+    }
+    
+    func getWeather() {
+        SwiftSky.get([.current, .minutes, .hours, .days, .alerts],
+                     at: Location(latitude: 1.1234, longitude: 1.234)
+        ) { result in
+            switch result {
+            case .success(let forecast):
+                print(forecast)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,9 +89,7 @@ class ExploreViewController : UIViewController {
         
         view.addSubview(tableView)
         tableView.setAnchor(top: view.safeTopAnchor, leading: view.leadingAnchor, bottom: view.safeBottomAnchor, trailing: view.trailingAnchor, paddingTop: 50, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 0)
-        
     }
-
 }
 
 extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
@@ -83,8 +99,7 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            cell.mainCardView = TimeView(frame: .zero)
-            cell.card.backgroundColor = .darkGray
+            cell.card.backgroundColor = UIColor.mainPurpleHalf.withAlphaComponent(0.35)
             cell.title.text = "Time"
         case 1:
             cell.title.text = "Weather"
@@ -98,6 +113,10 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             cell.title.text = "Something went wrong"
         }
+        
+        if cell.title.text == "Time" {
+            cell.mainCardView = TimeView(frame: .zero)
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,4 +126,6 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         return 400
     }
 }
+
+
 

@@ -12,16 +12,15 @@ class TimeView : UIView {
         buildCell()
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.tick) , userInfo: nil, repeats: true)
-        
     }
     
     
     var timeLabel : UILabel = {
         var lbl = UILabel()
         
-        
-        lbl.backgroundColor = UIColor.mainBlueHalf
-        lbl.text = ""
+        lbl.layer.cornerRadius = 20
+        lbl.layer.masksToBounds = true
+        lbl.backgroundColor = UIColor.mainBlueHalf.withAlphaComponent(0.85)
         lbl.textAlignment = .center
         lbl.font = .boldSystemFont(ofSize: 45)
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -32,9 +31,10 @@ class TimeView : UIView {
     var secondsLabel : UILabel = {
         var lbl = UILabel()
         
-        lbl.backgroundColor = UIColor.mainGreenHalf
+        lbl.layer.cornerRadius = 20
+        lbl.layer.masksToBounds = true
+        lbl.backgroundColor = UIColor.mainGreenHalf.withAlphaComponent(0.85)
         lbl.textAlignment = .center
-        lbl.text = "22"
         lbl.font = .boldSystemFont(ofSize: 32)
         lbl.textColor = .white
         return lbl
@@ -43,9 +43,10 @@ class TimeView : UIView {
     var dateLabel : UILabel = {
         var lbl = UILabel()
         
-        lbl.backgroundColor = UIColor.mainGrayHalf
+        lbl.layer.cornerRadius = 20
+        lbl.layer.masksToBounds = true
+        lbl.backgroundColor = UIColor.mainGrayHalf.withAlphaComponent(0.87)
         lbl.textAlignment = .center
-        lbl.text = "Savings"
         lbl.font = .boldSystemFont(ofSize: 42)
         lbl.textColor = .darkGray
         return lbl
@@ -79,9 +80,9 @@ class TimeView : UIView {
         
         timeView.frame = CGRect(x: 0, y: 0, width: (UIScreen.main.bounds.width) / 2, height: 200)
         NSLayoutConstraint.activate([
-            secondsView.leadingAnchor.constraint(equalTo: timeView.trailingAnchor, constant: 5),
+            secondsView.leadingAnchor.constraint(equalTo: timeView.trailingAnchor, constant: -5),
             secondsView.topAnchor.constraint(equalTo: timeView.topAnchor, constant: 0),
-            secondsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            secondsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             secondsView.heightAnchor.constraint(equalToConstant: 200),
         ])
         dateView.setAnchor(top: timeView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, paddingTop: 0, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 0)
@@ -92,7 +93,6 @@ class TimeView : UIView {
     func addContentToCell() {
         timeView.addSubview(timeLabel)
         timeLabel.setAnchor(top: timeView.topAnchor, leading: timeView.leadingAnchor, bottom: timeView.bottomAnchor, trailing: timeView.trailingAnchor, paddingTop: 0, paddingLeading: 10, paddingBottom: 5, paddingTrailing: 0)
-        print ("adding content to cell....")
         
         secondsView.addSubview(secondsLabel)
         secondsLabel.setAnchor(top: secondsView.topAnchor, leading: secondsView.leadingAnchor, bottom: secondsView.bottomAnchor, trailing: secondsView.trailingAnchor, paddingTop: 0, paddingLeading: 10, paddingBottom: 5, paddingTrailing: 0)
@@ -113,6 +113,7 @@ class TimeView : UIView {
         let second = cal.component(.second, from: date)
         let day = cal.component(.day, from: date)
         let month = cal.component(.month, from: date)
+        let year = cal.component(.year, from: date)
         
         if minute < 10 {
             timeLabel.text = "\(hour) : 0\(minute)"
@@ -120,7 +121,7 @@ class TimeView : UIView {
             timeLabel.text = "\(hour) : \(minute)"
         }
         secondsLabel.text = String(second)
-        dateLabel.text = String(month) + String(day)
+        dateLabel.text = createDate(month: month, day: day, year: year)
     }
     
     required init?(coder aDecoder: NSCoder) {

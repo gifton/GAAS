@@ -288,6 +288,51 @@ extension UIView {
         label.frame = .zero
     }
     
+    func createDate(month : Int, day : Int, year: Int) -> String {
+        var output : String = ""
+        switch month {
+        case 1:
+            output += "January"
+        case 2:
+            output += "February"
+        case 3:
+            output += "March"
+        case 4:
+            output += "April"
+        case 5:
+            output += "May"
+        case 6:
+            output += "June"
+        case 7:
+            output += "July"
+        case 8:
+            output += "August"
+        case 9:
+            output += "September"
+        case 10:
+            output += "October"
+        case 11:
+            output += "November"
+        default:
+            output += "December"
+        }
+        
+        switch day {
+        case 1, 21, 31:
+            output += " \(day)st, \(year)"
+        case 2, 22:
+            output += " \(day)nd, \(year)"
+        case 3, 23:
+            output += " \(day)st, \(year)"
+        default:
+            output += " \(day)th, \(year)"
+        }
+        
+        
+        
+        return output
+    }
+    
 }
 
 extension UITabBarController {
@@ -379,6 +424,18 @@ extension String {
             return 3
         }
         return 0
+    }
+}
+
+extension CALayer {
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: bounds,
+                                    byRoundingCorners: corners,
+                                    cornerRadii: CGSize(width: radius, height: radius))
+        
+        let shape = CAShapeLayer()
+        shape.path = maskPath.cgPath
+        mask = shape
     }
 }
 

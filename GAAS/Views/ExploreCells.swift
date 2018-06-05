@@ -21,7 +21,7 @@ class ExploreCell: UITableViewCell {
         buildCell()
         
         if selected == true {
-            card.removeShadow()
+            print ("selected")
         }
         
         
@@ -30,9 +30,10 @@ class ExploreCell: UITableViewCell {
     
     var card : UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.mainGreenHalf
-        view.layer.borderColor = UIColor.mainGrayHalf.cgColor
-        view.layer.cornerRadius = 5
+        
+        view.layer.borderColor = UIColor.mainGray.cgColor
+        view.layer.cornerRadius = 20
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -44,7 +45,6 @@ class ExploreCell: UITableViewCell {
     
     var title : UILabel = {
         var lbl = UILabel()
-        lbl.text = "Savings"
         lbl.font = .boldSystemFont(ofSize: 32)
         lbl.textColor = .white
         return lbl
@@ -53,12 +53,22 @@ class ExploreCell: UITableViewCell {
     func buildCell() {
         
         addSubview(card)
-        card.setCellShadow()
+//        card.setCellShadow()
         card.setAnchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, paddingTop: 12.5, paddingLeading: 15, paddingBottom: 12.5, paddingTrailing: 15)
         card.addSubview(title)
         title.frame = CGRect(x: 10, y: 10, width: 150, height: 50)
+        
+        //variable View
         card.addSubview(mainCardView)
-        mainCardView.setAnchor(top: title.bottomAnchor, leading: card.leadingAnchor, bottom: card.bottomAnchor, trailing: card.trailingAnchor, paddingTop: 0, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 0)
+        mainCardView.setAnchor(top: title.bottomAnchor, leading: card.leadingAnchor, bottom: card.bottomAnchor, trailing: card.trailingAnchor, paddingTop: -5, paddingLeading: 0, paddingBottom: 5, paddingTrailing: 5)
+        
+        //background blur
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = card.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        card.insertSubview(blurEffectView, at: 1)
+        
         
     }
 }

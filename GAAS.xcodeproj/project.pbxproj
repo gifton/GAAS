@@ -14,9 +14,12 @@
 		60C2171B20C4E0F6005E6034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C2171A20C4E0F6005E6034 /* Assets.xcassets */; };
 		60C2171E20C4E0F6005E6034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C2171C20C4E0F6005E6034 /* LaunchScreen.storyboard */; };
 		60C2892D20C510DC00A7FD06 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C2892C20C510DC00A7FD06 /* Time.swift */; };
+		60C77CFC20C5CB1B006C34AA /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C77CFB20C5CB1B006C34AA /* weather.swift */; };
+		ADCFD45D38AEE5689D9852A5 /* Pods_GAAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889BE388021E16591AFEC5E0 /* Pods_GAAS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044AD138718A292EB82E33AF /* Pods-GAAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAAS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GAAS/Pods-GAAS.debug.xcconfig"; sourceTree = "<group>"; };
 		6006E1A520C4E1FD00431429 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		6006E1A720C4E66000431429 /* ExploreCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCells.swift; sourceTree = "<group>"; };
 		60C2171020C4E0F4005E6034 /* GAAS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GAAS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +29,9 @@
 		60C2171D20C4E0F6005E6034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60C2171F20C4E0F6005E6034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60C2892C20C510DC00A7FD06 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		60C77CFB20C5CB1B006C34AA /* weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
+		8600FD935C1B8E6533AD19C0 /* Pods-GAAS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAAS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GAAS/Pods-GAAS.release.xcconfig"; sourceTree = "<group>"; };
+		889BE388021E16591AFEC5E0 /* Pods_GAAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GAAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCFD45D38AEE5689D9852A5 /* Pods_GAAS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				60C2171220C4E0F4005E6034 /* GAAS */,
 				60C2171120C4E0F4005E6034 /* Products */,
+				DB314B2D9F099C8931E26777 /* Pods */,
+				EA97E108847A3E15E60AADED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +67,7 @@
 		60C2171220C4E0F4005E6034 /* GAAS */ = {
 			isa = PBXGroup;
 			children = (
+				60C77CFA20C5CB0A006C34AA /* Networking */,
 				60C2171320C4E0F4005E6034 /* AppDelegate.swift */,
 				60C77CF920C598A1006C34AA /* Views */,
 				60C2171A20C4E0F6005E6034 /* Assets.xcassets */,
@@ -78,6 +88,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		60C77CFA20C5CB0A006C34AA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				60C77CFB20C5CB1B006C34AA /* weather.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DB314B2D9F099C8931E26777 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				044AD138718A292EB82E33AF /* Pods-GAAS.debug.xcconfig */,
+				8600FD935C1B8E6533AD19C0 /* Pods-GAAS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA97E108847A3E15E60AADED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				889BE388021E16591AFEC5E0 /* Pods_GAAS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60C2172220C4E0F6005E6034 /* Build configuration list for PBXNativeTarget "GAAS" */;
 			buildPhases = (
+				4ED13C4694467AF315C718AB /* [CP] Check Pods Manifest.lock */,
 				60C2170C20C4E0F4005E6034 /* Sources */,
 				60C2170D20C4E0F4005E6034 /* Frameworks */,
 				60C2170E20C4E0F4005E6034 /* Resources */,
+				C9E1713B210591BD00C84147 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,6 +180,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4ED13C4694467AF315C718AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GAAS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9E1713B210591BD00C84147 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GAAS/Pods-GAAS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSky/SwiftSky.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSky.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GAAS/Pods-GAAS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		60C2170C20C4E0F4005E6034 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -150,6 +230,7 @@
 			files = (
 				60C2892D20C510DC00A7FD06 /* Time.swift in Sources */,
 				60C2171620C4E0F4005E6034 /* ExploreViewController.swift in Sources */,
+				60C77CFC20C5CB1B006C34AA /* weather.swift in Sources */,
 				60C2171420C4E0F4005E6034 /* AppDelegate.swift in Sources */,
 				6006E1A620C4E1FD00431429 /* helpers.swift in Sources */,
 				6006E1A820C4E66000431429 /* ExploreCells.swift in Sources */,
@@ -286,6 +367,7 @@
 		};
 		60C2172320C4E0F6005E6034 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 044AD138718A292EB82E33AF /* Pods-GAAS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +386,7 @@
 		};
 		60C2172420C4E0F6005E6034 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8600FD935C1B8E6533AD19C0 /* Pods-GAAS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
