@@ -83,6 +83,7 @@
 			children = (
 				60C2171520C4E0F4005E6034 /* ExploreViewController.swift */,
 				6006E1A720C4E66000431429 /* ExploreCells.swift */,
+				60C77CFB20C5CB1B006C34AA /* weather.swift */,
 				60C2892C20C510DC00A7FD06 /* Time.swift */,
 			);
 			path = Views;
@@ -91,7 +92,6 @@
 		60C77CFA20C5CB0A006C34AA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				60C77CFB20C5CB1B006C34AA /* weather.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

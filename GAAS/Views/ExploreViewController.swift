@@ -10,7 +10,7 @@ import UIKit
 import SwiftSky
 
 class ExploreViewController : UIViewController {
-    
+    var weather : Double = 0.0
     static var API_KEY = "0e9b8e3d52606fad9bc70e04d38049de"
     
     let tableViewCellIdentifier = "tableVIewCell1"
@@ -31,7 +31,7 @@ class ExploreViewController : UIViewController {
     var welcomeLabel : UILabel = {
         var lbl = UILabel()
         lbl.text = "Savings"
-        lbl.font = .boldSystemFont(ofSize: 32)
+        lbl.font = .boldSystemFont(ofSize: 25)
         lbl.textColor = .darkGray
         lbl.addBorders(edges: [.bottom], color: .darkGray, thickness: 3)
         return lbl
@@ -44,20 +44,6 @@ class ExploreViewController : UIViewController {
         setupTableView()
         welcome()
         SwiftSky.secret = ExploreViewController.API_KEY
-        getWeather()
-    }
-    
-    func getWeather() {
-        SwiftSky.get([.current, .minutes, .hours, .days, .alerts],
-                     at: Location(latitude: 1.1234, longitude: 1.234)
-        ) { result in
-            switch result {
-            case .success(let forecast):
-                print(forecast)
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +53,7 @@ class ExploreViewController : UIViewController {
     
     func welcome() {
         view.addSubview(welcomeLabel)
-        welcomeLabel.frame = CGRect(x: 15, y: 20, width: UIScreen.main.bounds.width - 50, height: 40)
+        welcomeLabel.frame = CGRect(x: 15, y: 30, width: UIScreen.main.bounds.width - 50, height: 40)
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
@@ -116,6 +102,8 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         
         if cell.title.text == "Time" {
             cell.mainCardView = TimeView(frame: .zero)
+        } else if cell.title.text == "Weather" {
+            cell.mainCardView = WeatherView(frame: .zero)
         }
         return cell
     }
