@@ -22,7 +22,7 @@ class TimeView : UIView {
         lbl.layer.masksToBounds = true
         lbl.backgroundColor = UIColor.mainBlueHalf.withAlphaComponent(0.85)
         lbl.textAlignment = .center
-        lbl.font = .boldSystemFont(ofSize: 45)
+        lbl.font = .boldSystemFont(ofSize: 25)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .white
         return lbl
@@ -35,19 +35,17 @@ class TimeView : UIView {
         lbl.layer.masksToBounds = true
         lbl.backgroundColor = UIColor.mainGreenHalf.withAlphaComponent(0.85)
         lbl.textAlignment = .center
-        lbl.font = .boldSystemFont(ofSize: 32)
+        lbl.font = .boldSystemFont(ofSize: 45)
         lbl.textColor = .white
         return lbl
     }()
+
     
     var dateLabel : UILabel = {
         var lbl = UILabel()
-        
-        lbl.layer.cornerRadius = 20
-        lbl.layer.masksToBounds = true
-        lbl.backgroundColor = UIColor.mainGrayHalf.withAlphaComponent(0.87)
+
         lbl.textAlignment = .center
-        lbl.font = .boldSystemFont(ofSize: 42)
+        lbl.font = .boldSystemFont(ofSize: 28)
         lbl.textColor = .darkGray
         return lbl
     }()
@@ -66,6 +64,8 @@ class TimeView : UIView {
     
     var dateView : UIView = {
         let view = UIView()
+        
+        view.blurBackground()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 5
         return view
@@ -78,14 +78,14 @@ class TimeView : UIView {
         addSubview(secondsView)
         addSubview(dateView)
         
-        timeView.frame = CGRect(x: 0, y: 0, width: (UIScreen.main.bounds.width) / 2, height: 200)
+        timeView.frame = CGRect(x: 0, y: 0, width: (UIScreen.main.bounds.width) / 2, height: 100)
         NSLayoutConstraint.activate([
             secondsView.leadingAnchor.constraint(equalTo: timeView.trailingAnchor, constant: -5),
             secondsView.topAnchor.constraint(equalTo: timeView.topAnchor, constant: 0),
             secondsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            secondsView.heightAnchor.constraint(equalToConstant: 200),
+            secondsView.heightAnchor.constraint(equalToConstant: 100),
         ])
-        dateView.setAnchor(top: timeView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, paddingTop: 0, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 0)
+        dateView.setAnchor(top: timeView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, paddingTop: 0, paddingLeading: 10, paddingBottom: 2, paddingTrailing: 5)
         addContentToCell()
     }
     

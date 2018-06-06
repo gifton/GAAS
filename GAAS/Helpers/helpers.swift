@@ -20,15 +20,32 @@ extension UIView {
         return bt
     }()
     
-    
+    //duh
     func setCellShadow() {
         self.layer.shadowColor = UIColor.lightGray.cgColor
-        self.layer.shadowOffset = CGSize(width: 10, height: 8)
-        self.layer.shadowOpacity = 0.85
-        self.layer.shadowRadius = 2.0
-        self.layer.masksToBounds = false
+        self.layer.shadowOffset = CGSize(width: 6, height: 8)
+        self.layer.shadowOpacity = 0.65
+        self.layer.shadowRadius = 15.0
+        self.layer.masksToBounds = true
         self.clipsToBounds = false
-        self.layer.cornerRadius = 4
+    }
+    
+    func blurBackground() {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.layer.cornerRadius = 20
+        blurEffectView.layer.masksToBounds = true
+        self.insertSubview(blurEffectView, at: 0)
+    }
+    //duh
+    func setGradient(_ view : UIView) {
+        let layer = CAGradientLayer()
+        layer.frame = .zero
+        layer.colors = [UIColor.offWhite.cgColor, UIColor.lightGray.cgColor]
+        layer.cornerRadius = 20
+        view.layer.insertSublayer(layer, at: 0)
     }
     
     func removeShadow() {
@@ -44,27 +61,13 @@ extension UIView {
         self.clipsToBounds = true
     }
     //standard gradient and return a
-    func createGradient(view: UIView){
+    func createGradient(view: UIView) -> UIView{
         var gradient : CAGradientLayer!
         gradient = CAGradientLayer()
-        gradient.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 100)
+        gradient.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         gradient.colors = [UIColor.mainGray.cgColor, UIColor.mainBlue.cgColor]
         view.layer.addSublayer(gradient)
-    }
-    //set gradient with chosen colors
-    func gradientBackgorund(colors : [UIColor]) {
-        var internalColor : [CGColor] = []
-        for item in colors {
-            let inputColor = item.cgColor
-            internalColor.append(inputColor)
-        }
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = bounds
-        gradientLayer.colors = [internalColor]
-        gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
-        layer.insertSublayer(gradientLayer, at: 0)
+        return view
     }
 }
 
@@ -252,17 +255,6 @@ extension UIView {
         return borders
     }
     
-    @discardableResult func randomViewWithGradient(translate : Bool, gradient : ([UIColor])) -> UIView {
-        let testView : UIView = {
-            let view = UIView()
-            view.gradientBackgorund(colors: gradient)
-            if translate == false {
-                view.translatesAutoresizingMaskIntoConstraints = false
-            }
-            return view
-        }()
-        return testView
-    }
     func randomView(translate : Bool, color : UIColor, border : Bool) -> UIView{
         let testView : UIView = {
             let view = UIView()
@@ -369,6 +361,8 @@ public extension UIColor {
     static var mainOrangeHalf = UIColor(red:0.99, green:0.63, blue:0.48, alpha:0.5)
     static var mainYellowHalf = UIColor(red:0.99, green:0.85, blue:0.38, alpha:0.5)
     static var mainPurpleHalf = UIColor(red:0.48, green:0.23, blue:0.79, alpha:0.5)
+    static var gradientOrangeLight = UIColor(red:1.00, green:0.89, blue:0.49, alpha:1.0)
+    static var gradientOrangeDark = UIColor(red:0.97, green:0.42, blue:0.11, alpha:1.0)
     public convenience init(r: CGFloat, g: CGFloat, b: CGFloat) {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }

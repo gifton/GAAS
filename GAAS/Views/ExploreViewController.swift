@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftSky
 
 class ExploreViewController : UIViewController {
     var weather : Double = 0.0
@@ -43,7 +42,6 @@ class ExploreViewController : UIViewController {
         view.backgroundColor = .white
         setupTableView()
         welcome()
-        SwiftSky.secret = ExploreViewController.API_KEY
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,17 +83,19 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            cell.card.backgroundColor = UIColor.mainPurpleHalf.withAlphaComponent(0.35)
+            let layer = CAGradientLayer()
+            layer.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 30, height: (CellHeight.medium.rawValue - CellSpacing.top.rawValue - CellSpacing.bottom.rawValue))
+            layer.colors = [UIColor.mainPurpleHalf.cgColor, UIColor.mainBlueHalf.cgColor]
+            layer.cornerRadius = 20
+            cell.card.layer.insertSublayer(layer, at: 0)
             cell.title.text = "Time"
         case 1:
             cell.title.text = "Weather"
-            cell.card.backgroundColor = UIColor.mainOrange
-        case 2:
-            cell.title.text = "Tasks"
-            cell.card.backgroundColor = UIColor.mainYellow
-        case 3:
-            cell.title.text = "Savings"
-            cell.card.backgroundColor = UIColor.mainGreen
+            let layer = CAGradientLayer()
+            layer.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 30, height: 350)
+            layer.colors = [UIColor.gradientOrangeLight.cgColor, UIColor.gradientOrangeDark.cgColor]
+            layer.cornerRadius = 20
+            cell.card.layer.insertSublayer(layer, at: 0)
         default:
             cell.title.text = "Something went wrong"
         }
@@ -108,10 +108,14 @@ extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        if indexPath.row == 0 {
+            return CellHeight.medium.rawValue
+        } else {
+            return CellHeight.long.rawValue
+        }
     }
 }
 

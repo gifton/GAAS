@@ -1,0 +1,28 @@
+{
+    "hello" : [
+        {"Andorra": "Hola"},
+        {"United Arab Emirates": "Marhaba"},
+        {"Afghanistan": "Senga yai"},
+        {"Antigua and Barbuda": "Hello"},
+        {"Anguilla": "Hello"},
+        {"Albania": "Tungjatjeta"},
+        {"Armenia": "Barev"},
+        {"Netherlands Antilles": "Kon ta bai"},
+        {"Angola": "Olá"},
+        {"Asia/Pacific Region": "Hello"},
+        {"Antarctica": "Hello"},
+        {"Argentina": "Hola"},
+        {"American Samoa": "Hello"},
+        {"Aruba": "Kon ta bai"},
+        {"Azerbaijan": "Salam"},
+        {"Bosnia and Herzegovina": "Zdravo"},
+        {"Bangladesh": "Namaskar"},
+        {"Burkina Faso": "Bonjour"},
+        {"Bulgaria": "Zdravei"},
+        {"Bahrain": "Marhaba"},
+        {"Ethiopia": "Teanastëllën"},
+        {"Norfolk Island": "Whataway"},
+        {"Croatia": "Bok"},
+        {"Georgia": "Gamardjobat"}
+    ]
+} 

@@ -31,7 +31,6 @@ class ExploreCell: UITableViewCell {
     var card : UIView = {
         let view = UIView()
         
-        view.layer.borderColor = UIColor.mainGray.cgColor
         view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -54,7 +53,7 @@ class ExploreCell: UITableViewCell {
         
         addSubview(card)
 //        card.setCellShadow()
-        card.setAnchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, paddingTop: 12.5, paddingLeading: 15, paddingBottom: 12.5, paddingTrailing: 15)
+        card.setAnchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, paddingTop: CellSpacing.top.rawValue, paddingLeading: 15, paddingBottom: CellSpacing.bottom.rawValue, paddingTrailing: 15)
         card.addSubview(title)
         title.frame = CGRect(x: 10, y: 10, width: 150, height: 50)
         
