@@ -7,10 +7,42 @@
 //
 
 import UIKit
+import SwiftSky
+import CoreLocation
 
-class ExploreViewController : UIViewController {
+class ExploreViewController : UIViewController ,CLLocationManagerDelegate {
     var weather : Double = 0.0
     static var API_KEY = "0e9b8e3d52606fad9bc70e04d38049de"
+    
+    var locationManager = CLLocationManager()
+    
+    func determineMyCurrentLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+            //locationManager.startUpdatingHeading()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+        
+        // Call stopUpdatingLocation() to stop listening for location updates,
+        // other wise this function will be called every time when user location changes.
+        
+        // manager.stopUpdatingLocation()
+        
+        print("user latitude = \(userLocation.coordinate.latitude)")
+        print("user longitude = \(userLocation.coordinate.longitude)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
+        print("Error \(error)")
+    }
     
     let tableViewCellIdentifier = "tableVIewCell1"
     
@@ -19,7 +51,7 @@ class ExploreViewController : UIViewController {
         tb.isPagingEnabled = false
         tb.translatesAutoresizingMaskIntoConstraints = false
         tb.separatorStyle = .none
-        tb.showsVerticalScrollIndicator = false
+        tb.showsVerticalScrollIndicator = true
         tb.allowsSelection = false
         tb.backgroundColor = .mainGray
         tb.layer.cornerRadius = 20
@@ -40,8 +72,11 @@ class ExploreViewController : UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = .white
+        SwiftSky.secret = ExploreViewController.API_KEY
+        SwiftSky.hourAmount = .fortyEight
         setupTableView()
         welcome()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,49 +108,6 @@ class ExploreViewController : UIViewController {
         
         view.addSubview(tableView)
         tableView.setAnchor(top: view.safeTopAnchor, leading: view.leadingAnchor, bottom: view.safeBottomAnchor, trailing: view.trailingAnchor, paddingTop: 50, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 0)
-    }
-}
-
-extension ExploreViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as! ExploreCell
-        cell.backgroundColor = .mainGray
-        
-        switch indexPath.row {
-        case 0:
-            let layer = CAGradientLayer()
-            layer.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 30, height: (CellHeight.medium.rawValue - CellSpacing.top.rawValue - CellSpacing.bottom.rawValue))
-            layer.colors = [UIColor.mainPurpleHalf.cgColor, UIColor.mainBlueHalf.cgColor]
-            layer.cornerRadius = 20
-            cell.card.layer.insertSublayer(layer, at: 0)
-            cell.title.text = "Time"
-        case 1:
-            cell.title.text = "Weather"
-            let layer = CAGradientLayer()
-            layer.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 30, height: 350)
-            layer.colors = [UIColor.gradientOrangeLight.cgColor, UIColor.gradientOrangeDark.cgColor]
-            layer.cornerRadius = 20
-            cell.card.layer.insertSublayer(layer, at: 0)
-        default:
-            cell.title.text = "Something went wrong"
-        }
-        
-        if cell.title.text == "Time" {
-            cell.mainCardView = TimeView(frame: .zero)
-        } else if cell.title.text == "Weather" {
-            cell.mainCardView = WeatherView(frame: .zero)
-        }
-        return cell
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return CellHeight.medium.rawValue
-        } else {
-            return CellHeight.long.rawValue
-        }
     }
 }
 

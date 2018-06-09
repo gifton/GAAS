@@ -65,9 +65,8 @@ class TimeView : UIView {
     var dateView : UIView = {
         let view = UIView()
         
-        view.blurBackground()
+        view.blurBackground(type: .extraLight)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 5
         return view
     }()
     
@@ -78,19 +77,20 @@ class TimeView : UIView {
         addSubview(secondsView)
         addSubview(dateView)
         
-        timeView.frame = CGRect(x: 0, y: 0, width: (UIScreen.main.bounds.width) / 2, height: 100)
+        timeView.frame = CGRect(x: 0, y: 0, width: (UIScreen.main.bounds.width) / 2, height: 90)
         NSLayoutConstraint.activate([
             secondsView.leadingAnchor.constraint(equalTo: timeView.trailingAnchor, constant: -5),
             secondsView.topAnchor.constraint(equalTo: timeView.topAnchor, constant: 0),
             secondsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            secondsView.heightAnchor.constraint(equalToConstant: 100),
+            secondsView.heightAnchor.constraint(equalToConstant: 90),
         ])
-        dateView.setAnchor(top: timeView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, paddingTop: 0, paddingLeading: 10, paddingBottom: 2, paddingTrailing: 5)
+        dateView.setAnchor(top: timeView.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, paddingTop: 0, paddingLeading: 10, paddingBottom: 5, paddingTrailing: 5)
         addContentToCell()
     }
     
     //add content
     func addContentToCell() {
+        
         timeView.addSubview(timeLabel)
         timeLabel.setAnchor(top: timeView.topAnchor, leading: timeView.leadingAnchor, bottom: timeView.bottomAnchor, trailing: timeView.trailingAnchor, paddingTop: 0, paddingLeading: 10, paddingBottom: 5, paddingTrailing: 0)
         
@@ -104,8 +104,6 @@ class TimeView : UIView {
     
     //define content
     @objc func tick() {
-//        var output = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
-//        print (output)
         let date = Date()
         let cal = Calendar.current
         let hour = cal.component(.hour, from: date)

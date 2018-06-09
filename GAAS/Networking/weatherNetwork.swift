@@ -38,20 +38,43 @@ extension WeatherView {
                             
                             //define variables
                             let temp = (forecast.current?.temperature?.current?.value)!
-                            let forecastCurrent = (forecast.days?.summary)!
-                            var weatherIcon = (forecast.current?.icon)!
+                            let description = (forecast.days?.summary)!
+                            let weatherIcon = ((forecast.current?.icon)!).replacingOccurrences(of: "-", with: "")
                             let precipitationProbability = (forecast.current?.precipitation?.probability)!
-                            let precipitation = (forecast.current?.precipitation?.probability)!
-                            weatherIcon = weatherIcon.replacingOccurrences(of: "-", with: "")
+                            let precipitation = (forecast.current?.precipitation?.type)!
+                            let sunsetTime = (forecast.current?.sunset)
                             
                             //send to views
-                            self.currentTempLabel.text = String(temp) + " degrees"
-                            print (precipitation)
-                            print (weatherIcon)
+                            self.currentTempLabel.text = String(temp) + "°"
+                            self.currentWeatherDescription.text = description
+                            self.currentTempIcon.image = UIImage(named: weatherIcon)
+                            self.currentSunsetLabel.text = "\(sunsetTime)"
+                            
+                            //logic for precipitation
+                            if String((precipitation).rawValue) != "rain" {
+                                
+                                let currentTime = self.getCurrentHour()
+                                
+                                if currentTime >= 21 {
+                                    self.precipitationIcon.image = #imageLiteral(resourceName: "clearnight")
+                                } else {
+                                    self.precipitationIcon.image = #imageLiteral(resourceName: "clearday")
+                                }
+                                self.precipitationLabel.text = "Nahh fam"
+                                
+                                
+                            } else {
+                                
+                                self.precipitationIcon.image = #imageLiteral(resourceName: "rain")
+                                self.precipitationLabel.text = "\(precipitationProbability.label) chance of \(precipitation)"
+                            }
+
                             
                         case .failure(let error):
                             print(error)
                         }
+                        
+                        
         }
     }
 }

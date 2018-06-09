@@ -19,6 +19,8 @@
 		60C77CFC20C5CB1B006C34AA /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C77CFB20C5CB1B006C34AA /* weather.swift */; };
 		60D533DC20C7F44C008CF5FC /* gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D533DB20C7F44C008CF5FC /* gradient.swift */; };
 		60D533DE20C7FB01008CF5FC /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D533DD20C7FB01008CF5FC /* TableModel.swift */; };
+		60D533E020C87AB3008CF5FC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D533DF20C87AB3008CF5FC /* TableViewController.swift */; };
+		60D533E320C8A0CC008CF5FC /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D533E220C8A0CC008CF5FC /* time.swift */; };
 		ADCFD45D38AEE5689D9852A5 /* Pods_GAAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889BE388021E16591AFEC5E0 /* Pods_GAAS.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		60C77CFB20C5CB1B006C34AA /* weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
 		60D533DB20C7F44C008CF5FC /* gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradient.swift; sourceTree = "<group>"; };
 		60D533DD20C7FB01008CF5FC /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
+		60D533DF20C87AB3008CF5FC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		60D533E220C8A0CC008CF5FC /* time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = time.swift; sourceTree = "<group>"; };
 		8600FD935C1B8E6533AD19C0 /* Pods-GAAS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAAS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GAAS/Pods-GAAS.release.xcconfig"; sourceTree = "<group>"; };
 		889BE388021E16591AFEC5E0 /* Pods_GAAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GAAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +88,7 @@
 		60C2171220C4E0F4005E6034 /* GAAS */ = {
 			isa = PBXGroup;
 			children = (
+				60D533E120C87ABC008CF5FC /* Controller */,
 				60D533D920C7F439008CF5FC /* Helpers */,
 				602251AA20C7614500CBC13C /* Models */,
 				60C77CFA20C5CB0A006C34AA /* Networking */,
@@ -99,7 +104,6 @@
 		60C77CF920C598A1006C34AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				60C2171520C4E0F4005E6034 /* ExploreViewController.swift */,
 				6006E1A720C4E66000431429 /* ExploreCells.swift */,
 				60D533D820C7917B008CF5FC /* ExploreCells */,
 			);
@@ -128,8 +132,18 @@
 			children = (
 				60D533DB20C7F44C008CF5FC /* gradient.swift */,
 				6006E1A520C4E1FD00431429 /* helpers.swift */,
+				60D533E220C8A0CC008CF5FC /* time.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		60D533E120C87ABC008CF5FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60C2171520C4E0F4005E6034 /* ExploreViewController.swift */,
+				60D533DF20C87AB3008CF5FC /* TableViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		DB314B2D9F099C8931E26777 /* Pods */ = {
@@ -270,7 +284,9 @@
 				60C77CFC20C5CB1B006C34AA /* weather.swift in Sources */,
 				60D533DE20C7FB01008CF5FC /* TableModel.swift in Sources */,
 				60C2171420C4E0F4005E6034 /* AppDelegate.swift in Sources */,
+				60D533E020C87AB3008CF5FC /* TableViewController.swift in Sources */,
 				6006E1A620C4E1FD00431429 /* helpers.swift in Sources */,
+				60D533E320C8A0CC008CF5FC /* time.swift in Sources */,
 				602251A920C7614000CBC13C /* weatherModel.swift in Sources */,
 				60D533DC20C7F44C008CF5FC /* gradient.swift in Sources */,
 				6006E1A820C4E66000431429 /* ExploreCells.swift in Sources */,

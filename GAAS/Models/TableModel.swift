@@ -24,3 +24,14 @@ enum CellSpacing: CGFloat {
         return total
     }
 }
+
+enum CellView {
+    case weather
+    case time
+    case money
+    case loaction
+    case stocks
+    case news
+    case goal
+    case todo
+}

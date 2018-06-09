@@ -30,12 +30,17 @@ extension UIView {
         self.clipsToBounds = false
     }
     
-    func blurBackground() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+    func blurBackground(type : UIBlurEffectStyle, cornerRadius : CGFloat = 20) {
+        let blurEffect = UIBlurEffect(style: type)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.layer.cornerRadius = 20
+        if cornerRadius == 0 {
+            print ("no radius")
+        } else {
+            blurEffectView.layer.cornerRadius = cornerRadius
+        }
+        
         blurEffectView.layer.masksToBounds = true
         self.insertSubview(blurEffectView, at: 0)
     }
