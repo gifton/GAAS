@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let rootVC = ExploreViewController()
+        let rootVC = GAASViewController()
         window?.rootViewController = rootVC
         // Override point for customization after application launch.
         
