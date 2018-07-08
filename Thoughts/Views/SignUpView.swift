@@ -15,12 +15,13 @@ class SignUpView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildSkeleton()
+        addVerticalGradientLayer(topColor: .black, bottomColor: .darkGray)
     }
     
     let icon : UIImageView = {
         let img = UIImageView()
         img.backgroundColor = .clear
-        img.setHeightWidth(width: 100, height: 100)
+        img.setHeightWidth(width: 70, height: 70)
         img.image = #imageLiteral(resourceName: "icon")
         img.contentMode = .scaleAspectFit
         img.translatesAutoresizingMaskIntoConstraints = false
@@ -62,7 +63,7 @@ class SignUpView : UIView {
         btn.backgroundColor = .mainBlue
         btn.setTitle("Get started", for: UIControlState())
         btn.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 15).isActive = true
-        btn.addTarget(self, action: #selector(emailSend(_:)), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(didTapGetStarted), for: .touchUpInside)
         return btn
     }()
     let stackView = UIStackView()
@@ -103,18 +104,20 @@ class SignUpView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func emailSend(_ sender: UIButton) {
+    @objc func didTapGetStarted(_ sender: UIButton) {
         print("Button clicked")
         self.loginAlert.alpha = 1.0
         UIView.animate(withDuration: 1.5, animations: {
             self.loginAlert.alpha = 1.0
         })
         Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.remove(_:)), userInfo: nil, repeats: false)
-        if userHasAccount(email: emailField.text!) == EmailMessages.emailValid {
-            print ("user has account")
-        } else {
-            print ("User does NOT have an account")
-        }
+        let user = userHasAccount(email: emailField.text!)
+        print ("response is: \(user)")
+//        if user == EmailMessages.emailValid {
+//            print ("user has account")
+//        } else {
+//            print ("User does NOT have an account")
+//        }
     }
     @objc func remove(_ button : UIButton) {
         UIView.animate(withDuration: 1.5, animations: {

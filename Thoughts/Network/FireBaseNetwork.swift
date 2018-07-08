@@ -16,8 +16,7 @@ extension UIView {
         var emailResult : EmailMessages!
         Auth.auth().fetchProviders(forEmail: email) { (response, error) in
             //if there is an issue with calling firebase....
-            print ("response : \(type(of:response))")
-            if (error == nil) {
+            if (error != nil) {
                 print("error with auth:\(String(describing: error))")
                 emailResult = EmailMessages.noAccount
             } else {
@@ -27,14 +26,27 @@ extension UIView {
                     print ("email account could not be validated")
                 } else {
                     emailResult = EmailMessages.emailValid
-                    print ("acocunt is validated...")
+                    print ("account is validated...")
                 }
             }
         }
+        print ("--------------------------_")
+        print (emailResult)
         return emailResult ?? EmailMessages.noAccount
+    }
+
+    func login(email : String, password : String) -> Bool {
+        var output : Bool!
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if (error != nil) {
+                print (LocalizedError.self)
+                output = false
+            } else {
+                output = true
+            }
+        }
+        return output
     }
 }
 
-public func login(email : String, password : String) {
-    
-}
+

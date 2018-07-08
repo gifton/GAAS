@@ -20,3 +20,4 @@ struct LoginCredentials {
 
 typealias Email = String
 typealias Password = String
+
