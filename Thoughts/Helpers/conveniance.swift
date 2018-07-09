@@ -19,13 +19,11 @@ extension UIView {
         let output = TimeModal(day: day, month: month, year: year)
         return output
     }
-//    func getTime() -> Date {
-//        let date = Date()
-//        let calendar = Calendar.current
-//
-//        let hour = calendar.component(.hour, from: date)
-//        let day = calendar.component(.day, from: date)
-//
-//
-//    }
+}
+
+extension UIButton {
+    func disableButton(_ button: UIButton) {
+        button.layer.opacity = 0.4
+        button.isEnabled = false
+    }
 }

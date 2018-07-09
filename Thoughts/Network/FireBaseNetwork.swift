@@ -19,14 +19,17 @@ extension UIView {
             if (error != nil) {
                 print("error with auth:\(String(describing: error))")
                 emailResult = EmailMessages.noAccount
+                
             } else {
                 //if there is an account associated with this email
                 if response == nil {
                     emailResult = EmailMessages.noAccount
                     print ("email account could not be validated")
+                    
                 } else {
                     emailResult = EmailMessages.emailValid
                     print ("account is validated...")
+                    
                 }
             }
         }

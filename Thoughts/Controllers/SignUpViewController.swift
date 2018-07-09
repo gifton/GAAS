@@ -16,4 +16,8 @@ class SignUpViewController : UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    func testFunc() {
+        print ("test func worked!")
+    }
+    
 }

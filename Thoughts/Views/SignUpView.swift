@@ -67,18 +67,10 @@ class SignUpView : UIView {
         return btn
     }()
     let stackView = UIStackView()
-//    let loginAlert : UIView = {
-//        let view = UIView()
-//        view.setHeightWidth(width: 175, height: 175)
-//        view.backgroundColor = UIColor.offWhite.withAlphaComponent(0.65)
-//        view.layer.cornerRadius = 6
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.alpha = 0.0
-//
-//        return view
-//    }()
-    let loginAlert : UIView = AlertView(frame: CGRect(x: (UIScreen.main.bounds.width - 175) / 2, y: (UIScreen.main.bounds.height - 175) / 2, width: 175, height: 175))
+
+    var loginAlert : UIView!
     fileprivate func buildSkeleton() {
+        self.loginAlert = AlertView(frame: CGRect(x: (UIScreen.main.bounds.width - 175) / 2, y: (UIScreen.main.bounds.height - 175) / 2, width: 175, height: 175))
         stackView.addArrangedSubview(emailField)
         stackView.addArrangedSubview(passwordField)
         stackView.addArrangedSubview(signInButton)
@@ -106,22 +98,39 @@ class SignUpView : UIView {
     
     @objc func didTapGetStarted(_ sender: UIButton) {
         print("Button clicked")
-        self.loginAlert.alpha = 1.0
-        UIView.animate(withDuration: 1.5, animations: {
-            self.loginAlert.alpha = 1.0
-        })
-        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.remove(_:)), userInfo: nil, repeats: false)
+        let test = SignUpViewController()
+        test.testFunc()
+        Auth.auth().fetchProviders(forEmail: emailField.text!) { (response, error) in
+            //if there is an issue with calling firebase....
+            if (error != nil) {
+                print("error with auth:\(String(describing: error))")
+                self.remove(self.signInButton)
+            } else {
+                //if there is an account associated with this email
+                if response == nil {
+                    print ("email account could not be validated")
+                    UIView.animate(withDuration: 2.5, animations: {
+                        self.loginAlert.alpha = 1.0
+                        self.remove(self.signInButton)
+                    })
+                } else {
+                    print ("account is validated...")
+                    
+                }
+            }
+        }
+        
         let user = userHasAccount(email: emailField.text!)
         print ("response is: \(user)")
-//        if user == EmailMessages.emailValid {
-//            print ("user has account")
-//        } else {
-//            print ("User does NOT have an account")
-//        }
     }
     @objc func remove(_ button : UIButton) {
-        UIView.animate(withDuration: 1.5, animations: {
-            self.loginAlert.alpha = 0.0
-        })
+        UIView.animate(withDuration: 1.5, delay: 0.25, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.loginAlert.alpha = 1.0
+        }) { (success) in
+            UIView.animate(withDuration: 2, animations: {
+                self.loginAlert.alpha = 0.0
+            })
+            
+        }
     }
 }
