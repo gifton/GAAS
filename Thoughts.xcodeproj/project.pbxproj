@@ -33,6 +33,7 @@
 		D77279D620EE800A0062259B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D520EE800A0062259B /* SignUpView.swift */; };
 		D77279D820EE8A7A0062259B /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D720EE8A7A0062259B /* AlertView.swift */; };
 		D77279DA20EE8C500062259B /* Warnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D920EE8C500062259B /* Warnings.swift */; };
+		D7E1B9BD20F3B647005C9585 /* SignUpLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */; };
 		D7EEC11620ED70C50019589D /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */; };
 		D7EEC11920ED769E0019589D /* ToDoTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11820ED769E0019589D /* ToDoTableController.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		D77279D520EE800A0062259B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D77279D720EE8A7A0062259B /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D77279D920EE8C500062259B /* Warnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warnings.swift; sourceTree = "<group>"; };
+		D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLogic.swift; sourceTree = "<group>"; };
 		D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		D7EEC11820ED769E0019589D /* ToDoTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableController.swift; sourceTree = "<group>"; };
 		E24ED3B606D98FFFF4CF3C0A /* Pods_Thoughts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thoughts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 				D73FDA1B20EA15EF006C25BB /* CatagoriesController.swift */,
 				D7EEC11820ED769E0019589D /* ToDoTableController.swift */,
 				D77279CB20ED9DE50062259B /* SignUpViewController.swift */,
+				D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E1B9BD20F3B647005C9585 /* SignUpLogic.swift in Sources */,
 				D73FDA2E20EAF19B006C25BB /* Splash.swift in Sources */,
 				D73FDA1420EA14DA006C25BB /* TabBarController.swift in Sources */,
 				D73FDA1A20EA15C1006C25BB /* ThoughtsController.swift in Sources */,

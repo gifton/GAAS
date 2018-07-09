@@ -365,6 +365,7 @@ extension UITabBarController {
 public extension UIColor {
     static var mainGray = UIColor(red:0.96, green:0.96, blue:0.97, alpha:1.0)
     static var mainBlue = UIColor(red:0.34, green:0.75, blue:1.00, alpha:1.0)
+    static var wesatBlue = UIColor(red:0.38, green:0.44, blue:0.99, alpha:1.0)
     static var mutedBlue = UIColor(red:0.60, green:0.62, blue:0.69, alpha:1.0)
     static var mainYellow = UIColor(red:0.99, green:0.85, blue:0.38, alpha:1.0)
     static var mainGreen = UIColor(red:0.31, green:0.89, blue:0.76, alpha:1.0)
@@ -384,6 +385,7 @@ public extension UIColor {
     static var mainPurpleHalf = UIColor(red:0.48, green:0.23, blue:0.79, alpha:0.5)
     static var gradientOrangeLight = UIColor(red:1.00, green:0.89, blue:0.49, alpha:1.0)
     static var gradientOrangeDark = UIColor(red:0.97, green:0.42, blue:0.11, alpha:1.0)
+    
     
     //layering
     static var darkOverlay = UIColor(red:0.24, green:0.24, blue:0.24, alpha:0.7)
