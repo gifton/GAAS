@@ -33,6 +33,7 @@
 		D77279D620EE800A0062259B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D520EE800A0062259B /* SignUpView.swift */; };
 		D77279D820EE8A7A0062259B /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D720EE8A7A0062259B /* AlertView.swift */; };
 		D77279DA20EE8C500062259B /* Warnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D920EE8C500062259B /* Warnings.swift */; };
+		D7C10B6620F44A510068247D /* CatagoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C10B6520F44A510068247D /* CatagoriesCollectionViewCell.swift */; };
 		D7E1B9BD20F3B647005C9585 /* SignUpLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */; };
 		D7EEC11620ED70C50019589D /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */; };
 		D7EEC11920ED769E0019589D /* ToDoTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11820ED769E0019589D /* ToDoTableController.swift */; };
@@ -69,6 +70,7 @@
 		D77279D520EE800A0062259B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D77279D720EE8A7A0062259B /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D77279D920EE8C500062259B /* Warnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warnings.swift; sourceTree = "<group>"; };
+		D7C10B6520F44A510068247D /* CatagoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLogic.swift; sourceTree = "<group>"; };
 		D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		D7EEC11820ED769E0019589D /* ToDoTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				D73FDA2D20EAF19B006C25BB /* Splash.swift */,
 				D77279D520EE800A0062259B /* SignUpView.swift */,
 				D77279D720EE8A7A0062259B /* AlertView.swift */,
+				D7C10B6520F44A510068247D /* CatagoriesCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				D73FDA0220EA1371006C25BB /* AppDelegate.swift in Sources */,
 				D7EEC11620ED70C50019589D /* ToDoTableViewCell.swift in Sources */,
 				D77279D120EE7C5B0062259B /* Login.swift in Sources */,
+				D7C10B6620F44A510068247D /* CatagoriesCollectionViewCell.swift in Sources */,
 				D73FDA2C20EA3BA2006C25BB /* TimeModal.swift in Sources */,
 				D73FDA2520EA26CE006C25BB /* ThoughtsView.swift in Sources */,
 				D73FDA2A20EA3B1A006C25BB /* conveniance.swift in Sources */,

@@ -13,7 +13,7 @@ class AlertView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .clear
-        self.blurBackground(type: .dark)
+        self.blurBackground(type: .extraLight)
         self.layer.cornerRadius = 6
         buildView()
     }
@@ -22,17 +22,15 @@ class AlertView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func alertText (_ alert: String) -> UILabel {
-        let output : UILabel = {
-            let lbl = UILabel()
-            lbl.textColor = .offWhite
-            lbl.translatesAutoresizingMaskIntoConstraints = false
-            lbl.text = alert
-            lbl.adjustsFontSizeToFitWidth =  true
-            return lbl
-        }()
-        return output
-    }
+    let alertText : UILabel = {
+        let lbl = UILabel()
+        lbl.textColor = .offWhite
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.text = "I fucking hate busses"
+        lbl.adjustsFontSizeToFitWidth =  true
+        return lbl
+    }()
+    
     let alertImage : UIImageView = {
         let img = UIImageView()
         img.image = #imageLiteral(resourceName: "toDo")
@@ -42,13 +40,13 @@ class AlertView : UIView {
         return img
     }()
     func buildView() {
-        let textUpper = alertText("Please format email")
-        addSubview(textUpper)
+        addSubview(alertText)
         addSubview(alertImage)
         NSLayoutConstraint.activate([
-            textUpper.centerXAnchor.constraint(equalTo: centerXAnchor),
-            textUpper.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            textUpper.heightAnchor.constraint(equalToConstant: 30),
+            alertText.centerXAnchor.constraint(equalTo: centerXAnchor),
+            alertText.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            alertText.heightAnchor.constraint(equalToConstant: 30),
+            alertText.widthAnchor.constraint(equalToConstant: 165),
             alertImage.centerXAnchor.constraint(equalTo: centerXAnchor),
             alertImage.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])

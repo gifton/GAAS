@@ -14,10 +14,16 @@ class SignUpViewController : UIViewController {
         super.viewDidLoad()
         view = SignUpView(frame: UIScreen.main.bounds)
         self.navigationController?.isNavigationBarHidden = true
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     func testFunc() {
         print ("test func worked!")
+    }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
 }

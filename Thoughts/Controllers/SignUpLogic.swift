@@ -17,9 +17,13 @@ extension SignUpView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: catagoriesCellID, for: indexPath)
-        cell.backgroundColor = .offWhite
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: catagoriesCellID, for: indexPath) as! CatagoriesCollectionViewCell
+        cell.backgroundColor = .clear
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.catagoriesCV.frame.width, height: 200)
     }
     
     //build collectionView
@@ -28,23 +32,33 @@ extension SignUpView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         
         catagoriesCV.delegate = self
         catagoriesCV.dataSource = self
-        
+        catagoriesCV.register(CatagoriesCollectionViewCell.self, forCellWithReuseIdentifier: catagoriesCellID)
         self.addVerticalGradientLayer(topColor: .darkGray, bottomColor: .black)
         
         UIView.animate(withDuration: 2, delay: 0.5, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
             self.backgroundColor = .black
         }) { (true) in
+            let lineView = self.lineView
+            let catagoriesCV = self.catagoriesCV
+            let catagoriesField = self.catagoryField
+            let addCatagoriesButton = self.addCatagoriesButton
+            
             self.stackView.removeFromSuperview()
-            self.addSubview(self.lineView)
-            self.addSubview(self.searchBar)
+            self.addSubview(lineView)
+            self.addSubview(catagoriesCV)
+            lineView.addSubview(catagoriesField)
+            lineView.addSubview(addCatagoriesButton)
             
             NSLayoutConstraint.activate([
-                self.lineView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                self.lineView.topAnchor.constraint(equalTo: self.topAnchor, constant: ScreenSize.SCREEN_HEIGHT / 1.75),
-                self.searchBar.bottomAnchor.constraint(equalTo: self.lineView.topAnchor, constant: 0),
-                self.searchBar.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                self.searchBar.widthAnchor.constraint(equalToConstant: ScreenSize.SCREEN_WIDTH)
+                lineView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                lineView.topAnchor.constraint(equalTo: self.topAnchor, constant: ScreenSize.SCREEN_HEIGHT / 2),
+                catagoriesField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+                catagoriesField.topAnchor.constraint(equalTo: lineView.topAnchor),
+                catagoriesField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
+                catagoriesField.bottomAnchor.constraint(equalTo: lineView.bottomAnchor)
             ])
+            self.addCatagoriesButton.setAnchor(top: lineView.topAnchor, leading: catagoriesField.trailingAnchor, bottom: lineView.bottomAnchor, trailing: lineView.trailingAnchor, paddingTop: 5, paddingLeading: 5, paddingBottom: 5, paddingTrailing: 5)
+            self.catagoriesCV.setAnchor(top: lineView.bottomAnchor, leading: self.leadingAnchor, bottom: self.safeBottomAnchor, trailing: self.trailingAnchor, paddingTop: 5, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 0)
         }
         
         
@@ -70,6 +84,7 @@ extension SignUpView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
                 if (error != nil) {
                     print("error with auth:\(String(describing: error))")
                     self.displayAlert(self.signInButton)
+                    self.userDoesNotHaveAccount()
                 } else {
                     //if there is an account associated with this email
                     if response == nil {
