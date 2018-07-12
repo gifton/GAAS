@@ -28,95 +28,66 @@ extension SignUpView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     
     //build collectionView
     @objc func userDoesNotHaveAccount() {
-        
-        
+        print (self.stackView.frame)
         catagoriesCV.delegate = self
         catagoriesCV.dataSource = self
         catagoriesCV.register(CatagoriesCollectionViewCell.self, forCellWithReuseIdentifier: catagoriesCellID)
-        self.addVerticalGradientLayer(topColor: .darkGray, bottomColor: .black)
+        self.addVerticalGradientLayer(topColor: .randomRed, bottomColor: .mainGreen)
         
-        UIView.animate(withDuration: 2, delay: 0.5, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
-            self.backgroundColor = .black
-        }) { (true) in
-            let lineView = self.lineView
-            let catagoriesCV = self.catagoriesCV
-            let catagoriesField = self.catagoryField
-            let addCatagoriesButton = self.addCatagoriesButton
-            
-            self.stackView.removeFromSuperview()
-            self.addSubview(lineView)
-            self.addSubview(catagoriesCV)
-            lineView.addSubview(catagoriesField)
-            lineView.addSubview(addCatagoriesButton)
-            
-            NSLayoutConstraint.activate([
-                lineView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                lineView.topAnchor.constraint(equalTo: self.topAnchor, constant: ScreenSize.SCREEN_HEIGHT / 2),
-                catagoriesField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-                catagoriesField.topAnchor.constraint(equalTo: lineView.topAnchor),
-                catagoriesField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
-                catagoriesField.bottomAnchor.constraint(equalTo: lineView.bottomAnchor)
-            ])
-            self.addCatagoriesButton.setAnchor(top: lineView.topAnchor, leading: catagoriesField.trailingAnchor, bottom: lineView.bottomAnchor, trailing: lineView.trailingAnchor, paddingTop: 5, paddingLeading: 5, paddingBottom: 5, paddingTrailing: 5)
-            self.catagoriesCV.setAnchor(top: lineView.bottomAnchor, leading: self.leadingAnchor, bottom: self.safeBottomAnchor, trailing: self.trailingAnchor, paddingTop: 5, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 0)
-        }
-        
-        
+        UIView.animate(withDuration: 1, delay: 0.5, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+                self.icon.frame = CGRect(x: 25, y: ScreenSize.SCREEN_WIDTH / 8, width: 50, height: 50)
+            }) { (true) in
+                let lineView = self.lineView
+                let catagoriesCV = self.catagoriesCV
+                let catagoriesField = self.catagoryField
+                let addCatagoriesButton = self.addCatagoriesButton
+                let signInBtn = self.signInButton
+                let stackView = self.stackView
+                let welcome = self.welcomeLabel
+                
+                welcome.center.x -= 200
+                welcome.text = "Lets get you signed up!"
+                self.icon.image = #imageLiteral(resourceName: "icon-yellow")
+                signInBtn.backgroundColor = UIColor(red:1.00, green:0.76, blue:0.44, alpha:1.0)
+                signInBtn.layer.cornerRadius = 0
+                
+                stackView.insertArrangedSubview(self.nameField, at: 0)
+                stackView.removeArrangedSubview(self.signInButton)
+                
+                self.passwordField.isHidden = false
+                
+                self.nameField.addBorders(edges: .all, color: UIColor(red:1.00, green:0.76, blue:0.44, alpha:1.0))
+                self.emailField.addBorders(edges: .all, color: .black)
+                self.passwordField.addBorders(edges: .all, color: .black)
+                
+                self.addSubview(lineView)
+                self.addSubview(catagoriesCV)
+                self.addSubview(signInBtn)
+                lineView.addSubview(catagoriesField)
+                lineView.addSubview(addCatagoriesButton)
+                
+                NSLayoutConstraint.activate([
+                    lineView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                    lineView.topAnchor.constraint(equalTo: self.stackView.bottomAnchor, constant: 10),
+                    catagoriesField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+                    catagoriesField.topAnchor.constraint(equalTo: lineView.topAnchor),
+                    catagoriesField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
+                    catagoriesField.bottomAnchor.constraint(equalTo: lineView.bottomAnchor)
+                    ])
+                addCatagoriesButton.setAnchor(top: lineView.topAnchor, leading: catagoriesField.trailingAnchor, bottom: lineView.bottomAnchor, trailing: lineView.trailingAnchor, paddingTop: 5, paddingLeading: 5, paddingBottom: 5, paddingTrailing: 5)
+                catagoriesCV.setAnchor(top: lineView.bottomAnchor, leading: self.leadingAnchor, bottom: self.safeBottomAnchor, trailing: self.trailingAnchor, paddingTop: 5, paddingLeading: 0, paddingBottom: 50, paddingTrailing: 0)
+                signInBtn.setAnchor(top: catagoriesCV.bottomAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, paddingTop: 0, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 0)
+            }
+        })
     }
     
     @objc func displayAccountView(view : UIView) {
         
     }
-    @objc func didTapGetStarted(_ sender: UIButton) {
-        print("Button clicked")
-        sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+    
+    func errorWithEmailValidation(_ sender: Any) {
         
-        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: CGFloat(0.10), initialSpringVelocity: CGFloat(2.0),                     options: UIViewAnimationOptions.allowUserInteraction, animations: {
-            sender.transform = CGAffineTransform.identity
-        },
-                       completion: { Void in() }
-        )
-        switch passwordField.isHidden {
-            
-        case true:
-            Auth.auth().fetchProviders(forEmail: emailField.text!) { (response, error) in
-                //if there is an issue with calling firebase....
-                if (error != nil) {
-                    print("error with auth:\(String(describing: error))")
-                    self.displayAlert(self.signInButton)
-                    self.userDoesNotHaveAccount()
-                } else {
-                    //if there is an account associated with this email
-                    if response == nil {
-                        print ("email account could not be validated")
-                        self.displayAlert(self.signInButton)
-                        self.userDoesNotHaveAccount()
-                    } else {
-                        print ("account is validated...")
-                        self.passwordField.isHidden = false
-                        self.signInButton.setTitle("Log in", for: .normal)
-                    }
-                }
-            }
-            
-        case false:
-            Auth.auth().signIn(withEmail: self.emailField.text!, password: passwordField.text!) { (result, error) in
-                if (error != nil) {
-                    print (error?.localizedDescription as Any)
-                } else {
-                    print ("logged in")
-                }
-            }
-        }
     }
-    @objc func displayAlert(_ button : UIButton) {
-        UIView.animate(withDuration: 1.5, delay: 0.25, options: UIViewAnimationOptions.curveEaseIn, animations: {
-            self.loginAlert.alpha = 1.0
-        }) { (success) in
-            UIView.animate(withDuration: 2, animations: {
-                self.loginAlert.alpha = 0.0
-            })
-            
-        }
-    }
+    
 }

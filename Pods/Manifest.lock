@@ -34,12 +34,16 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NVActivityIndicatorView (4.2.1):
+    - NVActivityIndicatorView/Presenter (= 4.2.1)
+  - NVActivityIndicatorView/Presenter (4.2.1)
   - WCLShineButton (1.0.7)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Storage
+  - NVActivityIndicatorView
   - WCLShineButton
 
 SPEC REPOS:
@@ -53,6 +57,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMSessionFetcher
     - nanopb
+    - NVActivityIndicatorView
     - WCLShineButton
 
 SPEC CHECKSUMS:
@@ -65,8 +70,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NVActivityIndicatorView: 8068ba3ad39cb44cbaab25d89ff2546b3f092681
   WCLShineButton: d8b979b6f6f9f6709f9e241e6e1a4712a1a9b36b
 
-PODFILE CHECKSUM: 07417ebe9f5a28e8e9d6a9e1d92cc2f13eb118cd
+PODFILE CHECKSUM: d1a3d653fda05efe6b3e99f3a6605e5d87b063bc
 
 COCOAPODS: 1.5.3

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3C2F05AF909CF4CE1682F67F /* Pods_Thoughts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24ED3B606D98FFFF4CF3C0A /* Pods_Thoughts.framework */; };
+		D731E61B20F68ADD005E36D7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E61A20F68ADD005E36D7 /* WelcomeViewController.swift */; };
+		D731E61D20F68AF1005E36D7 /* WelcomeBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E61C20F68AF1005E36D7 /* WelcomeBack.swift */; };
+		D731E61F20F68AFD005E36D7 /* WelcomeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E61E20F68AFD005E36D7 /* WelcomeUser.swift */; };
+		D731E62220F6AAF7005E36D7 /* ValidationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */; };
 		D73FDA0220EA1371006C25BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0120EA1371006C25BB /* AppDelegate.swift */; };
 		D73FDA0420EA1371006C25BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0320EA1371006C25BB /* ViewController.swift */; };
 		D73FDA0720EA1371006C25BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73FDA0520EA1371006C25BB /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		10DC38E440EBC97029663F2C /* Pods-Thoughts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughts.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughts/Pods-Thoughts.release.xcconfig"; sourceTree = "<group>"; };
 		4A578B0D46FDA564C34F9D04 /* Pods-Thoughts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughts/Pods-Thoughts.debug.xcconfig"; sourceTree = "<group>"; };
+		D731E61A20F68ADD005E36D7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		D731E61C20F68AF1005E36D7 /* WelcomeBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBack.swift; sourceTree = "<group>"; };
+		D731E61E20F68AFD005E36D7 /* WelcomeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeUser.swift; sourceTree = "<group>"; };
+		D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationComplete.swift; sourceTree = "<group>"; };
 		D73FD9FE20EA1371006C25BB /* Thoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73FDA0120EA1371006C25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73FDA0320EA1371006C25BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +114,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D731E62020F68B07005E36D7 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				D7C10B6520F44A510068247D /* CatagoriesCollectionViewCell.swift */,
+				D731E61C20F68AF1005E36D7 /* WelcomeBack.swift */,
+				D731E61E20F68AFD005E36D7 /* WelcomeUser.swift */,
+				D77279D520EE800A0062259B /* SignUpView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		D73FD9F520EA1371006C25BB = {
 			isa = PBXGroup;
 			children = (
@@ -147,12 +166,11 @@
 		D73FDA1520EA1570006C25BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D731E62020F68B07005E36D7 /* SignIn */,
 				D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */,
 				D73FDA2420EA26CE006C25BB /* ThoughtsView.swift */,
 				D73FDA2D20EAF19B006C25BB /* Splash.swift */,
-				D77279D520EE800A0062259B /* SignUpView.swift */,
 				D77279D720EE8A7A0062259B /* AlertView.swift */,
-				D7C10B6520F44A510068247D /* CatagoriesCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,12 +178,13 @@
 		D73FDA1620EA1585006C25BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */,
+				D77279CB20ED9DE50062259B /* SignUpViewController.swift */,
 				D73FDA1720EA1598006C25BB /* ToDoController.swift */,
 				D73FDA1920EA15C1006C25BB /* ThoughtsController.swift */,
 				D73FDA1B20EA15EF006C25BB /* CatagoriesController.swift */,
 				D7EEC11820ED769E0019589D /* ToDoTableController.swift */,
-				D77279CB20ED9DE50062259B /* SignUpViewController.swift */,
-				D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */,
+				D731E61A20F68ADD005E36D7 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +200,7 @@
 				D77279D020EE7C5B0062259B /* Login.swift */,
 				D77279D320EE7CBB0062259B /* SignUp.swift */,
 				D77279D920EE8C500062259B /* Warnings.swift */,
+				D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -281,6 +301,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Thoughts/Pods-Thoughts-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/WCLShineButton/WCLShineButton.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -288,6 +309,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCLShineButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -336,15 +358,19 @@
 				D77279D420EE7CBB0062259B /* SignUp.swift in Sources */,
 				D77279D620EE800A0062259B /* SignUpView.swift in Sources */,
 				D73FDA0420EA1371006C25BB /* ViewController.swift in Sources */,
+				D731E61D20F68AF1005E36D7 /* WelcomeBack.swift in Sources */,
 				D73FDA2120EA22FD006C25BB /* Catagories.swift in Sources */,
 				D73FDA0220EA1371006C25BB /* AppDelegate.swift in Sources */,
 				D7EEC11620ED70C50019589D /* ToDoTableViewCell.swift in Sources */,
+				D731E61F20F68AFD005E36D7 /* WelcomeUser.swift in Sources */,
 				D77279D120EE7C5B0062259B /* Login.swift in Sources */,
+				D731E61B20F68ADD005E36D7 /* WelcomeViewController.swift in Sources */,
 				D7C10B6620F44A510068247D /* CatagoriesCollectionViewCell.swift in Sources */,
 				D73FDA2C20EA3BA2006C25BB /* TimeModal.swift in Sources */,
 				D73FDA2520EA26CE006C25BB /* ThoughtsView.swift in Sources */,
 				D73FDA2A20EA3B1A006C25BB /* conveniance.swift in Sources */,
 				D73FDA1C20EA15EF006C25BB /* CatagoriesController.swift in Sources */,
+				D731E62220F6AAF7005E36D7 /* ValidationComplete.swift in Sources */,
 				D73FDA2820EA2796006C25BB /* Styling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

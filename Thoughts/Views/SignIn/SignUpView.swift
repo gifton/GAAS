@@ -9,24 +9,23 @@
 import Foundation
 import UIKit
 import Firebase
-import FirebaseAuth
+//import FirebaseAuth
+import NVActivityIndicatorView
 
 class SignUpView : UIView {
+    var delegate: validationComplete?
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildSkeleton()
         addVerticalGradientLayer(topColor: .darkGray, bottomColor: .black)
     }
     //COMPONENTS
+    let activityIndicator = NVActivityIndicatorView(frame: CGRect(x: (ScreenSize.SCREEN_WIDTH - 45) / 2, y: (ScreenSize.SCREEN_HEIGHT - 45) / 2, width: 45, height: 45), type: .ballScaleMultiple, color: .white, padding: 10)
     //general
-    var loginAlert : UIView!
-    
     let icon : UIImageView = {
         let img = UIImageView()
-        img.setHeightWidth(width: 70, height: 70)
         img.image = #imageLiteral(resourceName: "icon")
         img.contentMode = .scaleAspectFit
-        img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     //sign in
@@ -66,6 +65,7 @@ class SignUpView : UIView {
         let btn = UIButton()
         btn.backgroundColor = .mainBlue
         btn.layer.cornerRadius = 5
+        btn.isSpringLoaded = true
         btn.setTitle("Get started", for: UIControlState())
         btn.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20).isActive = true
         btn.addTarget(self, action: #selector(didTapGetStarted), for: .touchUpInside)
@@ -85,6 +85,14 @@ class SignUpView : UIView {
         cv.isPagingEnabled = true
         return cv
     }()
+    let welcomeLabel : UILabel = {
+        let lbl = UILabel()
+        lbl.text = ""
+        lbl.font = .boldSystemFont(ofSize: 22)
+        lbl.adjustsFontSizeToFitWidth = true
+        lbl.textColor = .gray
+        return lbl
+    }()
     let lineView : UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -94,11 +102,27 @@ class SignUpView : UIView {
     }()
     let addCatagoriesButton : UIButton = {
         let btn = UIButton()
-        btn.backgroundColor = .mainOrange
-        btn.setTitleColor(.black, for: .normal)
+        btn.blurBackground(type: UIBlurEffectStyle.dark, cornerRadius: 0)
+        btn.setTitleColor(.white, for: .normal)
         btn.layer.cornerRadius = 2
         btn.setTitle("+", for: UIControlState())
         return btn
+    }()
+    let nameField : UITextField = {
+        let tv = UITextField()
+        let paddingEmail = UIView.init(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+        tv.backgroundColor = .clear
+        tv.layer.cornerRadius = 3
+        tv.addBorders(edges: [.all], color: .offWhite)
+        tv.setHeightWidth(width: UIScreen.main.bounds.width - 20, height: 50)
+        tv.attributedPlaceholder = NSAttributedString(string: "First Name",
+                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        tv.textColor = .offWhite
+        tv.leftView = paddingEmail
+        tv.leftViewMode = .always
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        
+        return tv
     }()
     let catagoryField : UITextField = {
         let tv = UITextField()
@@ -106,8 +130,8 @@ class SignUpView : UIView {
         tv.textColor = .white
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.attributedPlaceholder = NSAttributedString(string: "Add some catagories you want to track!",
-                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        tv.addBorders(edges: [.bottom], color: .offWhite)
+                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray])
+        tv.addBorders(edges: [.bottom], color: .black)
         let padding = UIView.init(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
         tv.leftViewMode = .always
         tv.leftView = padding
@@ -116,7 +140,8 @@ class SignUpView : UIView {
     }()
     
     fileprivate func buildSkeleton() {
-        self.loginAlert = AlertView(frame: CGRect(x: (UIScreen.main.bounds.width - 175) / 2, y: (UIScreen.main.bounds.height - 175) / 2, width: 175, height: 175))
+        
+        addSubview(activityIndicator)
         
         stackView.addArrangedSubview(emailField)
         stackView.addArrangedSubview(passwordField)
@@ -125,18 +150,14 @@ class SignUpView : UIView {
         stackView.spacing = 10
         stackView.alignment = .center
         
-        loginAlert.alpha = 0.0
-        
         self.addSubview(stackView)
         self.addSubview(icon)
-        insertSubview(loginAlert, at: 99999)
-        stackView.frame = CGRect(x: 0, y: 150, width: UIScreen.main.bounds.width, height: 200)
-        NSLayoutConstraint.activate([
-            icon.centerXAnchor.constraint(equalTo: centerXAnchor),
-            icon.topAnchor.constraint(equalTo: safeTopAnchor, constant: 20),
-            loginAlert.centerXAnchor.constraint(equalTo: centerXAnchor),
-            loginAlert.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 25),
-        ])
+        self.addSubview(welcomeLabel)
+        
+        welcomeLabel.frame = CGRect(x: 100, y: (ScreenSize.SCREEN_WIDTH / 10) + 10, width: 220, height: 50)
+        welcomeLabel.center.x += 200
+        stackView.frame = CGRect(x: 0, y: 150, width: UIScreen.main.bounds.width, height: 180)
+        icon.frame = CGRect(x: (ScreenSize.SCREEN_WIDTH - 70) / 2, y: 40, width: 70, height: 70)
     }
     
     required init?(coder aDecoder: NSCoder) {

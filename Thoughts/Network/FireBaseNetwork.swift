@@ -10,46 +10,66 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseAuth
+import NVActivityIndicatorView
 
-extension UIView {
-    func userHasAccount(email : String) -> EmailMessages {
-        var emailResult : EmailMessages!
-        Auth.auth().fetchProviders(forEmail: email) { (response, error) in
-            //if there is an issue with calling firebase....
-            if (error != nil) {
-                print("error with auth:\(String(describing: error))")
-                emailResult = EmailMessages.noAccount
-                
-            } else {
-                //if there is an account associated with this email
-                if response == nil {
-                    emailResult = EmailMessages.noAccount
-                    print ("email account could not be validated")
-                    
-                } else {
-                    emailResult = EmailMessages.emailValid
-                    print ("account is validated...")
-                    
+//login logic
+//  if user has account, display password field
+//  if user doesnt have account, display signup components
+//  if email invalid / poor connection : display alert
+extension SignUpView {
+    
+    @objc func didTapGetStarted(_ sender: UIButton) {
+        print("Button clicked")
+        
+//        sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+        self.signInButton.setTitleColor(.black, for: .normal)
+        
+        switch passwordField.isHidden {
+            case true:
+                self.activityIndicator.startAnimating()
+                Auth.auth().fetchProviders(forEmail: emailField.text!) { (response, error) in
+                    //if there is an issue with calling firebase....
+                    if (error != nil) {
+                        print("error with auth:\(String(describing: error))")
+                        self.userDoesNotHaveAccount()
+                        self.activityIndicator.stopAnimating()
+                    } else {
+                        //if there is an account associated with this email
+                        if response == nil {
+                            print ("email account could not be validated")
+                            self.activityIndicator.stopAnimating()
+                            self.userDoesNotHaveAccount()
+                        } else {
+                            print ("account is validated...")
+                            self.passwordField.isHidden = false
+                            self.signInButton.setTitle("Log in", for: .normal)
+                            self.activityIndicator.stopAnimating()
+                        }
+                    }
                 }
-            }
+            
+            case false:
+                if self.icon.image == #imageLiteral(resourceName: "icon") {
+                    activityIndicator.startAnimating()
+                    Auth.auth().signIn(withEmail: self.emailField.text!, password: passwordField.text!) { (result, error) in
+                        if (error != nil) {
+                            print (error?.localizedDescription as Any)
+                            self.activityIndicator.stopAnimating()
+                        } else {
+                            print ("logged in")
+                            self.activityIndicator.stopAnimating()
+                        }
+                    }
+                } else {
+                    let activity = NVActivityIndicatorView(frame: CGRect(x: (ScreenSize.SCREEN_WIDTH - 45) / 2, y: (ScreenSize.SCREEN_HEIGHT - 45), width: 45, height: 45), type: .ballScaleMultiple, color: .white, padding: 10)
+                    self.signInButton.setTitle("", for: .normal)
+                    self.signInButton.addSubview(activity)
+                    print ("creating account")
+                    let welcomeView = WelcomeViewController()
+                    delegate?.pushWelcomeVC(welcomeView)
+                }
+            
         }
-        print ("--------------------------_")
-        print (emailResult)
-        return emailResult ?? EmailMessages.noAccount
-    }
-
-    func login(email : String, password : String) -> Bool {
-        var output : Bool!
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if (error != nil) {
-                print (LocalizedError.self)
-                output = false
-            } else {
-                output = true
-            }
-        }
-        return output
     }
 }
-
 

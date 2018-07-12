@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         let navigationController = UINavigationController()
         let vc = SignUpViewController()
-        navigationController.setViewControllers([vc], animated: true)
+        navigationController.pushViewController(vc, animated: true)
         window?.rootViewController = navigationController
         // Override point for customization after application launch.
         

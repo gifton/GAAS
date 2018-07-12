@@ -15,6 +15,7 @@ class AlertView : UIView {
         self.backgroundColor = .clear
         self.blurBackground(type: .extraLight)
         self.layer.cornerRadius = 6
+        translatesAutoresizingMaskIntoConstraints = false
         buildView()
     }
     

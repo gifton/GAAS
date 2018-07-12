@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD9DCA55055A517921B123FEDA518413"
+               BlueprintIdentifier = "6149F43A3F4EFF7520F058432F7883C7"
                BuildableName = "WCLShineButton.framework"
                BlueprintName = "WCLShineButton"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DD9DCA55055A517921B123FEDA518413"
+            BlueprintIdentifier = "6149F43A3F4EFF7520F058432F7883C7"
             BuildableName = "WCLShineButton.framework"
             BlueprintName = "WCLShineButton"
             ReferencedContainer = "container:Pods.xcodeproj">

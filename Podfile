@@ -8,6 +8,7 @@ pod 'WCLShineButton'
 pod 'Firebase/Core'
 pod 'Firebase/Storage'
 pod 'Firebase/Auth'
+pod 'NVActivityIndicatorView'
   # Pods for Thoughts
 
 end
