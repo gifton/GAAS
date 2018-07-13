@@ -1,0 +1,5 @@
+1: Install Xcode -- https://developer.apple.com/xcode/downloads/
+2: Install CocoaPods with terminal -- sudo gem install cocoapods
+3: CD into working directory and "pod install" all necessary Pod files
+4: Open .xcWorkspace file (white xcode application icon not blue)
+5: cmd + r to run 
