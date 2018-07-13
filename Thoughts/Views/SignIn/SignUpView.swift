@@ -35,7 +35,6 @@ class SignUpView : UIView {
         tv.backgroundColor = .clear
         tv.layer.cornerRadius = 3
         tv.addBorders(edges: [.all], color: .offWhite)
-        tv.setHeightWidth(width: UIScreen.main.bounds.width - 20, height: 50)
         tv.attributedPlaceholder = NSAttributedString(string: "Email",
                                                       attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         tv.textColor = .offWhite
@@ -49,7 +48,6 @@ class SignUpView : UIView {
         tv.backgroundColor = .clear
         tv.textColor = .offWhite
         tv.layer.cornerRadius = 5
-        tv.setHeightWidth(width: UIScreen.main.bounds.width - 20, height: 50)
         tv.attributedPlaceholder = NSAttributedString(string: "Password",
                                                       attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         tv.addBorders(edges: [.all], color: .offWhite)
@@ -67,7 +65,6 @@ class SignUpView : UIView {
         btn.layer.cornerRadius = 5
         btn.isSpringLoaded = true
         btn.setTitle("Get started", for: UIControlState())
-        btn.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20).isActive = true
         btn.addTarget(self, action: #selector(didTapGetStarted), for: .touchUpInside)
         return btn
     }()
@@ -114,7 +111,6 @@ class SignUpView : UIView {
         tv.backgroundColor = .clear
         tv.layer.cornerRadius = 3
         tv.addBorders(edges: [.all], color: .offWhite)
-        tv.setHeightWidth(width: UIScreen.main.bounds.width - 20, height: 50)
         tv.attributedPlaceholder = NSAttributedString(string: "First Name",
                                                       attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         tv.textColor = .offWhite
@@ -148,7 +144,8 @@ class SignUpView : UIView {
         stackView.addArrangedSubview(signInButton)
         stackView.axis = .vertical
         stackView.spacing = 10
-        stackView.alignment = .center
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
         
         self.addSubview(stackView)
         self.addSubview(icon)
@@ -156,7 +153,7 @@ class SignUpView : UIView {
         
         welcomeLabel.frame = CGRect(x: 100, y: (ScreenSize.SCREEN_WIDTH / 10) + 10, width: 220, height: 50)
         welcomeLabel.center.x += 200
-        stackView.frame = CGRect(x: 0, y: 150, width: UIScreen.main.bounds.width, height: 180)
+        stackView.frame = CGRect(x: 10, y: 150, width: UIScreen.main.bounds.width - 20, height: 180)
         icon.frame = CGRect(x: (ScreenSize.SCREEN_WIDTH - 70) / 2, y: 40, width: 70, height: 70)
     }
     

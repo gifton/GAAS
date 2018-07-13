@@ -61,12 +61,7 @@ extension SignUpView {
                         }
                     }
                 } else {
-                    let activity = NVActivityIndicatorView(frame: CGRect(x: (ScreenSize.SCREEN_WIDTH - 45) / 2, y: (ScreenSize.SCREEN_HEIGHT - 45), width: 45, height: 45), type: .ballScaleMultiple, color: .white, padding: 10)
-                    self.signInButton.setTitle("", for: .normal)
-                    self.signInButton.addSubview(activity)
-                    print ("creating account")
-                    let welcomeView = WelcomeViewController()
-                    delegate?.pushWelcomeVC(welcomeView)
+                    self.createUser()
                 }
             
         }

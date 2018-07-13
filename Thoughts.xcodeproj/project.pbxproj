@@ -38,7 +38,6 @@
 		D77279D820EE8A7A0062259B /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D720EE8A7A0062259B /* AlertView.swift */; };
 		D77279DA20EE8C500062259B /* Warnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D920EE8C500062259B /* Warnings.swift */; };
 		D7C10B6620F44A510068247D /* CatagoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C10B6520F44A510068247D /* CatagoriesCollectionViewCell.swift */; };
-		D7E1B9BD20F3B647005C9585 /* SignUpLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */; };
 		D7EEC11620ED70C50019589D /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */; };
 		D7EEC11920ED769E0019589D /* ToDoTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11820ED769E0019589D /* ToDoTableController.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +49,7 @@
 		D731E61C20F68AF1005E36D7 /* WelcomeBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBack.swift; sourceTree = "<group>"; };
 		D731E61E20F68AFD005E36D7 /* WelcomeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeUser.swift; sourceTree = "<group>"; };
 		D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationComplete.swift; sourceTree = "<group>"; };
+		D731E62320F93FD0005E36D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D73FD9FE20EA1371006C25BB /* Thoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73FDA0120EA1371006C25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73FDA0320EA1371006C25BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +79,6 @@
 		D77279D720EE8A7A0062259B /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D77279D920EE8C500062259B /* Warnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warnings.swift; sourceTree = "<group>"; };
 		D7C10B6520F44A510068247D /* CatagoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoriesCollectionViewCell.swift; sourceTree = "<group>"; };
-		D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLogic.swift; sourceTree = "<group>"; };
 		D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		D7EEC11820ED769E0019589D /* ToDoTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableController.swift; sourceTree = "<group>"; };
 		E24ED3B606D98FFFF4CF3C0A /* Pods_Thoughts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thoughts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +158,7 @@
 				D73FDA0820EA1373006C25BB /* Assets.xcassets */,
 				D73FDA0A20EA1373006C25BB /* LaunchScreen.storyboard */,
 				D73FDA1320EA14DA006C25BB /* TabBarController.swift */,
+				D731E62320F93FD0005E36D7 /* README.md */,
 			);
 			path = Thoughts;
 			sourceTree = "<group>";
@@ -178,7 +178,6 @@
 		D73FDA1620EA1585006C25BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D7E1B9BC20F3B647005C9585 /* SignUpLogic.swift */,
 				D77279CB20ED9DE50062259B /* SignUpViewController.swift */,
 				D73FDA1720EA1598006C25BB /* ToDoController.swift */,
 				D73FDA1920EA15C1006C25BB /* ThoughtsController.swift */,
@@ -343,7 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7E1B9BD20F3B647005C9585 /* SignUpLogic.swift in Sources */,
 				D73FDA2E20EAF19B006C25BB /* Splash.swift in Sources */,
 				D73FDA1420EA14DA006C25BB /* TabBarController.swift in Sources */,
 				D73FDA1A20EA15C1006C25BB /* ThoughtsController.swift in Sources */,

@@ -38,14 +38,14 @@ class CatagoriesCollectionViewCell: UICollectionViewCell {
     
     let view1 : UIView = {
         let view = UIView()
-        view.backgroundColor = .black
+        view.backgroundColor = .darkGray
         view.translatesAutoresizingMaskIntoConstraints = false
         view.makeCircle(size: 50)
         return view
     }()
     let view2 : UIView = {
         let view = UIView()
-        view.backgroundColor = .black
+        view.backgroundColor = .darkGray
         view.layer.cornerRadius = 5
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
