@@ -1,0 +1,8 @@
+File Structure :
+# organize files :
+views -- should only have components
+# networking :
+* -- should only have networking features, calling functions from controller to manipulate view depending on returned object from server
+# controller : 
+* -- set controller view to external view file
+  -- use /extension/ of controllers view to manipoulate components AND data
