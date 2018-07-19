@@ -19,4 +19,16 @@ enum Catagories: String {
     case reading = "Reading"
     case exercise = "Exersise"
     case design = "Design"
+    
+    static let getAll = [
+        math,
+        python,
+        react,
+        programming,
+        swift,
+        writing,
+        reading,
+        exercise,
+        design
+    ]
 }

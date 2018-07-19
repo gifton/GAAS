@@ -61,6 +61,15 @@ extension SignUpView {
                         }
                     }
                 } else {
+                    Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!) { (result, error) in
+                        if (error != nil) {
+                            print (error?.localizedDescription as Any)
+                            self.activityIndicator.stopAnimating()
+                        } else {
+                            print ("User created")
+                            self.activityIndicator.stopAnimating()
+                        }
+                    }
                     self.createUser()
                 }
             

@@ -12,6 +12,7 @@
 		D731E61D20F68AF1005E36D7 /* WelcomeBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E61C20F68AF1005E36D7 /* WelcomeBack.swift */; };
 		D731E61F20F68AFD005E36D7 /* WelcomeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E61E20F68AFD005E36D7 /* WelcomeUser.swift */; };
 		D731E62220F6AAF7005E36D7 /* ValidationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */; };
+		D731E66720FE6666005E36D7 /* Thoughts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D731E66420FE6606005E36D7 /* Thoughts.xcdatamodeld */; };
 		D73FDA0220EA1371006C25BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0120EA1371006C25BB /* AppDelegate.swift */; };
 		D73FDA0420EA1371006C25BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0320EA1371006C25BB /* ViewController.swift */; };
 		D73FDA0720EA1371006C25BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73FDA0520EA1371006C25BB /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		D731E61E20F68AFD005E36D7 /* WelcomeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeUser.swift; sourceTree = "<group>"; };
 		D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationComplete.swift; sourceTree = "<group>"; };
 		D731E62320F93FD0005E36D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D731E66520FE6606005E36D7 /* Thoughts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thoughts.xcdatamodel; sourceTree = "<group>"; };
 		D73FD9FE20EA1371006C25BB /* Thoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73FDA0120EA1371006C25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73FDA0320EA1371006C25BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				D77279CA20ED9D1B0062259B /* GoogleService-Info.plist */,
 				D73FDA0D20EA1373006C25BB /* Info.plist */,
 				D73FDA0120EA1371006C25BB /* AppDelegate.swift */,
+				D731E66420FE6606005E36D7 /* Thoughts.xcdatamodeld */,
 				D73FDA2620EA2783006C25BB /* Helpers */,
 				D73FDA1F20EA22A7006C25BB /* Modals */,
 				D73FDA1620EA1585006C25BB /* Controllers */,
@@ -344,6 +347,7 @@
 			files = (
 				D73FDA2E20EAF19B006C25BB /* Splash.swift in Sources */,
 				D73FDA1420EA14DA006C25BB /* TabBarController.swift in Sources */,
+				D731E66720FE6666005E36D7 /* Thoughts.xcdatamodeld in Sources */,
 				D73FDA1A20EA15C1006C25BB /* ThoughtsController.swift in Sources */,
 				D77279D820EE8A7A0062259B /* AlertView.swift in Sources */,
 				D77279DA20EE8C500062259B /* Warnings.swift in Sources */,
@@ -569,6 +573,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D731E66420FE6606005E36D7 /* Thoughts.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D731E66520FE6606005E36D7 /* Thoughts.xcdatamodel */,
+			);
+			currentVersion = D731E66520FE6606005E36D7 /* Thoughts.xcdatamodel */;
+			path = Thoughts.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D73FD9F620EA1371006C25BB /* Project object */;
 }

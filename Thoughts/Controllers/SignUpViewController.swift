@@ -118,6 +118,7 @@ extension SignUpView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         print ("creating account")
         let welcomeView = WelcomeViewController()
         delegate?.pushWelcomeVC(welcomeView)
+        
     }
     
     func errorWithEmailValidation(_ sender: Any) {

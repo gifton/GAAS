@@ -15,4 +15,12 @@ struct ThoughtsModal {
     let body : String
     let avatar : UIImage
     let color : UIColor
+    
+    static let getAll = [
+        "catagory",
+        "title",
+        "body",
+        "avatar",
+        "color"
+    ]
 }
