@@ -13,6 +13,7 @@
 		D731E61F20F68AFD005E36D7 /* WelcomeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E61E20F68AFD005E36D7 /* WelcomeUser.swift */; };
 		D731E62220F6AAF7005E36D7 /* ValidationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */; };
 		D731E66720FE6666005E36D7 /* Thoughts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D731E66420FE6606005E36D7 /* Thoughts.xcdatamodeld */; };
+		D731E6692104AA3C005E36D7 /* ThoughtAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E6682104AA3C005E36D7 /* ThoughtAddition.swift */; };
 		D73FDA0220EA1371006C25BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0120EA1371006C25BB /* AppDelegate.swift */; };
 		D73FDA0420EA1371006C25BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0320EA1371006C25BB /* ViewController.swift */; };
 		D73FDA0720EA1371006C25BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73FDA0520EA1371006C25BB /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationComplete.swift; sourceTree = "<group>"; };
 		D731E62320F93FD0005E36D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D731E66520FE6606005E36D7 /* Thoughts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thoughts.xcdatamodel; sourceTree = "<group>"; };
+		D731E6682104AA3C005E36D7 /* ThoughtAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtAddition.swift; sourceTree = "<group>"; };
 		D73FD9FE20EA1371006C25BB /* Thoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73FDA0120EA1371006C25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73FDA0320EA1371006C25BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				D77279D320EE7CBB0062259B /* SignUp.swift */,
 				D77279D920EE8C500062259B /* Warnings.swift */,
 				D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */,
+				D731E6682104AA3C005E36D7 /* ThoughtAddition.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				D77279D820EE8A7A0062259B /* AlertView.swift in Sources */,
 				D77279DA20EE8C500062259B /* Warnings.swift in Sources */,
 				D77279CF20EE7C180062259B /* FireBaseNetwork.swift in Sources */,
+				D731E6692104AA3C005E36D7 /* ThoughtAddition.swift in Sources */,
 				D73FDA1E20EA229E006C25BB /* ToDoModal.swift in Sources */,
 				D73FDA1820EA1598006C25BB /* ToDoController.swift in Sources */,
 				D73FDA2320EA238E006C25BB /* ThoughtsModal.swift in Sources */,

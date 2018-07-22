@@ -142,6 +142,7 @@ extension SignUpView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     
     @objc func onAddCatClick(_ sender : UIButton) {
         self.addCatagoriesButton.backgroundColor = .red
+        self.addCatagoriesButton.titleLabel?.textColor = .black
         print ("moved to addition section")
         guard let text = self.catagoryField.text else { return }
         self.userCatagories.append(text)

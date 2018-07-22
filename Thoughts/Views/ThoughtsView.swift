@@ -13,9 +13,8 @@ import WCLShineButton
 class ThoughtsView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .black
+        backgroundColor = .mainGreen
         setupSkeleton()
-        buttonBuild()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,58 +35,29 @@ class ThoughtsView : UIView {
         tableView.dataSource = self
         
         thoughtsLabel.frame = CGRect(x: 10, y: 20, width: 150, height: 60)
-        search.setAnchor(top: nil, leading: helloView.leadingAnchor, bottom: helloView.bottomAnchor, trailing: helloView.trailingAnchor, paddingTop: 0, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 100)
+        search.setAnchor(top: nil, leading: helloView.leadingAnchor, bottom: helloView.bottomAnchor, trailing: helloView.trailingAnchor, paddingTop: 0, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 50)
         NSLayoutConstraint.activate([
             search.heightAnchor.constraint(equalToConstant: 44),
             add.leadingAnchor.constraint(equalTo: search.trailingAnchor, constant: 2),
-            add.trailingAnchor.constraint(equalTo: trailingAnchor),
+            add.trailingAnchor.constraint(equalTo: safeTrailingAnchor),
             add.bottomAnchor.constraint(equalTo: helloView.bottomAnchor),
+            add.topAnchor.constraint(equalTo: search.topAnchor),
             tableView.topAnchor.constraint(equalTo: helloView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeBottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         let dateLabel = getDate()
         let date = dateLabel.buildTime(dateLabel)
         print(date.subviews)
         helloView.addSubview(date)
-        date.setAnchor(top: helloView.topAnchor, leading: nil, bottom: add.topAnchor, trailing: helloView.trailingAnchor, paddingTop: 20, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 10)
+        date.setAnchor(top: safeTopAnchor, leading: nil, bottom: nil, trailing: helloView.trailingAnchor, paddingTop: 0, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 10)
     }
-    
-    private var allButtons: [WCLShineButton] {
-        return [add]
-    }
-    
-    private func  buttonBuild() {
-        var param1 = WCLShineParams()
-        param1.bigShineColor = UIColor(rgb: (153,152,38))
-        param1.smallShineColor = UIColor(rgb: (102,102,102))
-        param1.animDuration = 1
-        add.params = param1
-        add.isSelected = true
-        
-        var param3 = WCLShineParams()
-        param3.allowRandomColor = true
-        param3.animDuration = 1
-        btn3.isSelected = true
-        btn3.params = param3
-        btn3.image = .smile
-        btn3.translatesAutoresizingMaskIntoConstraints = false
-        btn3.layer.borderColor = UIColor.mainYellow.cgColor
-        btn3.layer.borderWidth = 2
-        
-        addSubview(btn3)
-        NSLayoutConstraint.activate([
-            btn3.centerXAnchor.constraint(equalTo: centerXAnchor),
-            btn3.topAnchor.constraint(equalTo: topAnchor)
-        ])
-    }
-    
-    @IBAction func action(_ sender: WCLShineButton) {
+    @objc func action(_ sender: WCLShineButton) {
         print("Clicked \(sender.isSelected)")
         DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
-            sender.setClicked(!sender.isSelected, animated: true)
+            
         })
         print("fwk")
     }
@@ -102,16 +72,15 @@ class ThoughtsView : UIView {
     let search : UISearchBar = {
         let sb = UISearchBar()
         sb.keyboardType = .default
-        sb.isTranslucent = true
-        sb.barStyle = .blackOpaque
+        sb.isTranslucent = false
+        sb.searchBarStyle = UISearchBarStyle.minimal
         return sb
     }()
-    let add : WCLShineButton = {
-        let bt = WCLShineButton()
-        bt.layer.borderColor = UIColor.mainYellow.cgColor
+    let add : UIButton = {
+        let bt = UIButton()
+        bt.backgroundColor = .clear
         bt.layer.cornerRadius = 2
-        bt.layer.borderWidth = 2
-        bt.image = .smile
+        bt.setImage(#imageLiteral(resourceName: "toDo"), for: .normal)
         bt.addTarget(self, action: #selector(action(_:)), for: .touchUpInside)
         bt.translatesAutoresizingMaskIntoConstraints = false
         return bt
@@ -120,7 +89,7 @@ class ThoughtsView : UIView {
         let lbl = UILabel()
         lbl.text = "Thoughts"
         lbl.font = .boldSystemFont(ofSize: 32)
-        lbl.textColor = UIColor.white.withAlphaComponent(0.7)
+        lbl.textColor = UIColor.white.withAlphaComponent(0.99)
         return lbl
     }()
     

@@ -22,10 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         let navigationController = UINavigationController()
-        let vc = SignUpViewController()
+        let vc = ThoughtsController()
         navigationController.pushViewController(vc, animated: true)
         window?.rootViewController = navigationController
-        // Override point for customization after application launch.
         
         FirebaseApp.configure()
         return true

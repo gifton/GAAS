@@ -92,7 +92,7 @@ class SignUpView : UIView {
         lbl.text = ""
         lbl.font = .boldSystemFont(ofSize: 22)
         lbl.adjustsFontSizeToFitWidth = true
-        lbl.textColor = .gray
+        lbl.textColor = .lightGray
         return lbl
     }()
     let lineView : UIView = {
