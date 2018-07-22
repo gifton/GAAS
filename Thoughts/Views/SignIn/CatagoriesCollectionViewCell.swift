@@ -36,16 +36,19 @@ class CatagoriesCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    let view1 : UIView = {
-        let view = UIView()
-        view.backgroundColor = .darkGray
+    let view1 : UIImageView = {
+        let view = UIImageView()
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.makeCircle(size: 50)
         return view
     }()
-    let view2 : UIView = {
-        let view = UIView()
-        view.backgroundColor = .darkGray
+    let view2 : UILabel = {
+        let view = UILabel()
+        view.text = "Gifton"
+        view.textAlignment = .center
+        view.textColor = .offWhite
+        view.backgroundColor = .lightGray
         view.layer.cornerRadius = 5
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

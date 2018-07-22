@@ -66,7 +66,7 @@ extension SignUpView {
                             print (error?.localizedDescription as Any)
                             self.activityIndicator.stopAnimating()
                         } else {
-                            print ("User created")
+                            print ("logged in")
                             self.activityIndicator.stopAnimating()
                         }
                     }

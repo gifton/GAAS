@@ -13,7 +13,12 @@ import Firebase
 import NVActivityIndicatorView
 
 class SignUpView : UIView {
-    var delegate: validationComplete?
+    
+    public var userCatagories : [Any] = ["Calculus 2", "Physics 3", "Differential equations", "Machine Learning", "Quantum phenomena"]
+    
+    
+    
+    var delegate : validationComplete?
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildSkeleton()
@@ -99,7 +104,7 @@ class SignUpView : UIView {
     }()
     let addCatagoriesButton : UIButton = {
         let btn = UIButton()
-        btn.blurBackground(type: UIBlurEffectStyle.dark, cornerRadius: 0)
+        btn.backgroundColor = .mainOrange
         btn.setTitleColor(.white, for: .normal)
         btn.layer.cornerRadius = 2
         btn.setTitle("+", for: UIControlState())
@@ -155,6 +160,8 @@ class SignUpView : UIView {
         welcomeLabel.center.x += 200
         stackView.frame = CGRect(x: 10, y: 150, width: UIScreen.main.bounds.width - 20, height: 180)
         icon.frame = CGRect(x: (ScreenSize.SCREEN_WIDTH - 70) / 2, y: 40, width: 70, height: 70)
+        
+        addCatagoriesButton.addTarget(self, action: #selector(onAddCatClick(_:)), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {

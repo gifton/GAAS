@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+// after validation is complete, display specific either : welcome view, welcome back
 protocol validationComplete : class {
-    func pushWelcomeVC(_ view : UIViewController)
+    
+    func onUserValidated(_ view : UIViewController)
+    
 }

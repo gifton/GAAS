@@ -14,7 +14,7 @@ import NVActivityIndicatorView
 
 class SignUpViewController : UIViewController, validationComplete {
     
-    func pushWelcomeVC(_ vc : UIViewController) {
+    func onUserValidated(_ vc : UIViewController) {
         print("working...")
     }
     
@@ -22,6 +22,7 @@ class SignUpViewController : UIViewController, validationComplete {
         super.viewDidLoad()
         
         self.view = SignUpView(frame: UIScreen.main.bounds)
+        
         self.navigationController?.isNavigationBarHidden = true
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -40,14 +41,26 @@ class SignUpViewController : UIViewController, validationComplete {
 }
 
 
+//MARK: SignUP view extenstiob for all external functions
+
+
 extension SignUpView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if userCatagories.count != 0 {
+            return userCatagories.count
+        } else {
+            return 10
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: catagoriesCellID, for: indexPath) as! CatagoriesCollectionViewCell
         cell.backgroundColor = .clear
+        
+        if userCatagories.count != 0 {
+            cell.view2.text = userCatagories[indexPath.row] as? String ?? "Gifton"
+        }
+        
         return cell
     }
     
@@ -112,16 +125,27 @@ extension SignUpView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     }
     
     func createUser() {
-        let activity = NVActivityIndicatorView(frame: CGRect(x: (ScreenSize.SCREEN_WIDTH - 45) / 2, y: (ScreenSize.SCREEN_HEIGHT - 45), width: 45, height: 45), type: .ballScaleMultiple, color: .white, padding: 10)
-        self.signInButton.setTitle("", for: .normal)
-        self.signInButton.addSubview(activity)
-        print ("creating account")
-        let welcomeView = WelcomeViewController()
-        delegate?.pushWelcomeVC(welcomeView)
         
+        self.signInButton.setTitle("", for: .normal)
+        self.activityIndicator.startAnimating()
+        
+        let welcomeView = WelcomeViewController()
+        delegate?.onUserValidated(welcomeView)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change 2 to desired number of seconds
+            self.activityIndicator.stopAnimating()
+            print("user has been authenticated, and hello view controller displayed")
+        }
     }
+
+    func errorWithEmailValidation(_ sender: Any) {}
     
-    func errorWithEmailValidation(_ sender: Any) {
+    @objc func onAddCatClick(_ sender : UIButton) {
+        self.addCatagoriesButton.backgroundColor = .red
+        print ("moved to addition section")
+        guard let text = self.catagoryField.text else { return }
+        self.userCatagories.append(text)
+        catagoriesCV.reloadData()
         
     }
     
