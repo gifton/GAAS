@@ -11,7 +11,10 @@ import UIKit
 
 extension ThoughtsView : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: tableViewID, for: indexPath) as! ToDoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: tableViewID, for: indexPath) as! ThoughtsTableViewCell
+        cell.title.text = self.sampleData.title
+        cell.topic.text = self.sampleData.catagory.rawValue
+        cell.icon.image = (self.sampleData.avatar).withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
         return cell
     }
     
@@ -20,6 +23,6 @@ extension ThoughtsView : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 140
     }
 }

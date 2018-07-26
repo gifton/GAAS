@@ -163,45 +163,6 @@ extension UIView {
         return trailingAnchor
     }
     
-    @discardableResult func createRating(rating: Int, AutoConstraint: Bool) -> UIStackView {
-        let starStackBuild = UIStackView(frame: CGRect(x: 10, y: 10, width: 100, height: 30))
-        starStackBuild.axis = .horizontal
-        starStackBuild.spacing = 5
-        starStackBuild.distribution = .fillEqually
-        if AutoConstraint == false {
-            starStackBuild.translatesAutoresizingMaskIntoConstraints = false
-        } else {
-            starStackBuild.translatesAutoresizingMaskIntoConstraints = true
-        }
-        starStackBuild.axis = .horizontal
-        starStackBuild.distribution = .fillEqually
-        for _ in 1...rating{
-            let star : UIImageView = {
-                let iv = UIImageView()
-                iv.image = #imageLiteral(resourceName: "star_gold")
-                iv.contentMode = UIViewContentMode.scaleAspectFit
-                return iv
-            }()
-            starStackBuild.addArrangedSubview(star)
-        }
-        let remaining : Int = 5 - rating
-        if remaining > 0{
-            for _ in 1...remaining {
-                let star : UIImageView = {
-                    let iv = UIImageView()
-                    iv.image = #imageLiteral(resourceName: "star_empty")
-                    iv.contentMode = UIViewContentMode.scaleAspectFit
-                    return iv
-                }()
-                starStackBuild.addArrangedSubview(star)
-            }
-        } else {
-            print ("Unable to get ratings...")
-        }
-        
-        return starStackBuild
-    }
-    
     @discardableResult func addBorders(edges: UIRectEdge, color: UIColor = .mainGray, thickness: CGFloat = 1.0) -> [UIView] {
         
         var borders = [UIView]()
@@ -274,6 +235,13 @@ extension UIView {
         }
         
         return borders
+    }
+    
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
     }
     
     func randomView(translate : Bool, color : UIColor, border : Bool) -> UIView{
@@ -447,6 +415,48 @@ extension CALayer {
     }
 }
 
+//padding on label -----/
 
+class EdgeInsetLabel: UILabel {
+    var textInsets = UIEdgeInsets.zero {
+        didSet { invalidateIntrinsicContentSize() }
+    }
+    
+    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+        let insetRect = UIEdgeInsetsInsetRect(bounds, textInsets)
+        let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
+        let invertedInsets = UIEdgeInsets(top: -textInsets.top,
+                                          left: -textInsets.left,
+                                          bottom: -textInsets.bottom,
+                                          right: -textInsets.right)
+        return UIEdgeInsetsInsetRect(textRect, invertedInsets)
+    }
+    
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: UIEdgeInsetsInsetRect(rect, textInsets))
+    }
+}
 
+extension EdgeInsetLabel {
+    var leftTextInset: CGFloat {
+        set { textInsets.left = newValue }
+        get { return textInsets.left }
+    }
+    
+    var rightTextInset: CGFloat {
+        set { textInsets.right = newValue }
+        get { return textInsets.right }
+    }
+    
+    var topTextInset: CGFloat {
+        set { textInsets.top = newValue }
+        get { return textInsets.top }
+    }
+    
+    var bottomTextInset: CGFloat {
+        set { textInsets.bottom = newValue }
+        get { return textInsets.bottom }
+    }
+}
 
+// -----/

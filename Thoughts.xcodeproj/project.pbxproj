@@ -14,15 +14,15 @@
 		D731E62220F6AAF7005E36D7 /* ValidationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E62120F6AAF7005E36D7 /* ValidationComplete.swift */; };
 		D731E66720FE6666005E36D7 /* Thoughts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D731E66420FE6606005E36D7 /* Thoughts.xcdatamodeld */; };
 		D731E6692104AA3C005E36D7 /* ThoughtAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E6682104AA3C005E36D7 /* ThoughtAddition.swift */; };
+		D731E67721089C75005E36D7 /* Comfortaa in Resources */ = {isa = PBXBuildFile; fileRef = D731E66A21089A70005E36D7 /* Comfortaa */; };
+		D731E679210A4E2B005E36D7 /* NewThought.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E678210A4E2B005E36D7 /* NewThought.swift */; };
 		D73FDA0220EA1371006C25BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0120EA1371006C25BB /* AppDelegate.swift */; };
 		D73FDA0420EA1371006C25BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0320EA1371006C25BB /* ViewController.swift */; };
 		D73FDA0720EA1371006C25BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73FDA0520EA1371006C25BB /* Main.storyboard */; };
 		D73FDA0920EA1373006C25BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73FDA0820EA1373006C25BB /* Assets.xcassets */; };
 		D73FDA0C20EA1373006C25BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73FDA0A20EA1373006C25BB /* LaunchScreen.storyboard */; };
 		D73FDA1420EA14DA006C25BB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA1320EA14DA006C25BB /* TabBarController.swift */; };
-		D73FDA1820EA1598006C25BB /* ToDoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA1720EA1598006C25BB /* ToDoController.swift */; };
 		D73FDA1A20EA15C1006C25BB /* ThoughtsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA1920EA15C1006C25BB /* ThoughtsController.swift */; };
-		D73FDA1C20EA15EF006C25BB /* CatagoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA1B20EA15EF006C25BB /* CatagoriesController.swift */; };
 		D73FDA1E20EA229E006C25BB /* ToDoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA1D20EA229E006C25BB /* ToDoModal.swift */; };
 		D73FDA2120EA22FD006C25BB /* Catagories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA2020EA22FD006C25BB /* Catagories.swift */; };
 		D73FDA2320EA238E006C25BB /* ThoughtsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA2220EA238E006C25BB /* ThoughtsModal.swift */; };
@@ -54,6 +54,8 @@
 		D731E62320F93FD0005E36D7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D731E66520FE6606005E36D7 /* Thoughts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thoughts.xcdatamodel; sourceTree = "<group>"; };
 		D731E6682104AA3C005E36D7 /* ThoughtAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtAddition.swift; sourceTree = "<group>"; };
+		D731E66A21089A70005E36D7 /* Comfortaa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Comfortaa; path = ../../../../../../Downloads/Comfortaa; sourceTree = "<group>"; };
+		D731E678210A4E2B005E36D7 /* NewThought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewThought.swift; sourceTree = "<group>"; };
 		D73FD9FE20EA1371006C25BB /* Thoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73FDA0120EA1371006C25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73FDA0320EA1371006C25BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,9 +64,7 @@
 		D73FDA0B20EA1373006C25BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D73FDA0D20EA1373006C25BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D73FDA1320EA14DA006C25BB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		D73FDA1720EA1598006C25BB /* ToDoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoController.swift; sourceTree = "<group>"; };
 		D73FDA1920EA15C1006C25BB /* ThoughtsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsController.swift; sourceTree = "<group>"; };
-		D73FDA1B20EA15EF006C25BB /* CatagoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoriesController.swift; sourceTree = "<group>"; };
 		D73FDA1D20EA229E006C25BB /* ToDoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModal.swift; sourceTree = "<group>"; };
 		D73FDA2020EA22FD006C25BB /* Catagories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catagories.swift; sourceTree = "<group>"; };
 		D73FDA2220EA238E006C25BB /* ThoughtsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsModal.swift; sourceTree = "<group>"; };
@@ -128,6 +128,16 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		D731E67A210A4E34005E36D7 /* Thoughts */ = {
+			isa = PBXGroup;
+			children = (
+				D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */,
+				D73FDA2420EA26CE006C25BB /* ThoughtsView.swift */,
+				D731E678210A4E2B005E36D7 /* NewThought.swift */,
+			);
+			path = Thoughts;
+			sourceTree = "<group>";
+		};
 		D73FD9F520EA1371006C25BB = {
 			isa = PBXGroup;
 			children = (
@@ -172,8 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				D731E62020F68B07005E36D7 /* SignIn */,
-				D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */,
-				D73FDA2420EA26CE006C25BB /* ThoughtsView.swift */,
+				D731E67A210A4E34005E36D7 /* Thoughts */,
+				D731E66A21089A70005E36D7 /* Comfortaa */,
 				D73FDA2D20EAF19B006C25BB /* Splash.swift */,
 				D77279D720EE8A7A0062259B /* AlertView.swift */,
 			);
@@ -184,9 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				D77279CB20ED9DE50062259B /* SignUpViewController.swift */,
-				D73FDA1720EA1598006C25BB /* ToDoController.swift */,
 				D73FDA1920EA15C1006C25BB /* ThoughtsController.swift */,
-				D73FDA1B20EA15EF006C25BB /* CatagoriesController.swift */,
 				D7EEC11820ED769E0019589D /* ToDoTableController.swift */,
 				D731E61A20F68ADD005E36D7 /* WelcomeViewController.swift */,
 			);
@@ -287,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D731E67721089C75005E36D7 /* Comfortaa in Resources */,
 				D73FDA0C20EA1373006C25BB /* LaunchScreen.storyboard in Resources */,
 				D77279C920ED9D180062259B /* GoogleService-Info.plist in Resources */,
 				D73FDA0920EA1373006C25BB /* Assets.xcassets in Resources */,
@@ -357,7 +366,6 @@
 				D77279CF20EE7C180062259B /* FireBaseNetwork.swift in Sources */,
 				D731E6692104AA3C005E36D7 /* ThoughtAddition.swift in Sources */,
 				D73FDA1E20EA229E006C25BB /* ToDoModal.swift in Sources */,
-				D73FDA1820EA1598006C25BB /* ToDoController.swift in Sources */,
 				D73FDA2320EA238E006C25BB /* ThoughtsModal.swift in Sources */,
 				D77279CC20ED9DE50062259B /* SignUpViewController.swift in Sources */,
 				D7EEC11920ED769E0019589D /* ToDoTableController.swift in Sources */,
@@ -371,11 +379,11 @@
 				D731E61F20F68AFD005E36D7 /* WelcomeUser.swift in Sources */,
 				D77279D120EE7C5B0062259B /* Login.swift in Sources */,
 				D731E61B20F68ADD005E36D7 /* WelcomeViewController.swift in Sources */,
+				D731E679210A4E2B005E36D7 /* NewThought.swift in Sources */,
 				D7C10B6620F44A510068247D /* CatagoriesCollectionViewCell.swift in Sources */,
 				D73FDA2C20EA3BA2006C25BB /* TimeModal.swift in Sources */,
 				D73FDA2520EA26CE006C25BB /* ThoughtsView.swift in Sources */,
 				D73FDA2A20EA3B1A006C25BB /* conveniance.swift in Sources */,
-				D73FDA1C20EA15EF006C25BB /* CatagoriesController.swift in Sources */,
 				D731E62220F6AAF7005E36D7 /* ValidationComplete.swift in Sources */,
 				D73FDA2820EA2796006C25BB /* Styling.swift in Sources */,
 			);

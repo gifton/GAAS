@@ -13,13 +13,13 @@ import WCLShineButton
 class ThoughtsView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .mainGreen
+        backgroundColor = .mainBlue
         setupSkeleton()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    let sampleData = ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "toDo"), color: .mainYellow)
+    
+    let tableViewID = "tableVIewIdentifier"
     
     private func setupSkeleton() {
         addSubview(helloView)
@@ -28,9 +28,9 @@ class ThoughtsView : UIView {
         helloView.addSubview(thoughtsLabel)
         helloView.addSubview(search)
         helloView.addSubview(add)
-        helloView.addSubview(tableView)
+        addSubview(tableView)
         
-        tableView.register(ToDoTableViewCell.self, forCellReuseIdentifier: tableViewID)
+        tableView.register(ThoughtsTableViewCell.self, forCellReuseIdentifier: tableViewID)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -56,9 +56,6 @@ class ThoughtsView : UIView {
     }
     @objc func action(_ sender: WCLShineButton) {
         print("Clicked \(sender.isSelected)")
-        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
-            
-        })
         print("fwk")
     }
     
@@ -66,7 +63,7 @@ class ThoughtsView : UIView {
         let view = UIView()
         view.backgroundColor = .darkOverlay
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setHeightWidth(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6)
+        view.setHeightWidth(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6.5)
         return view
     }()
     let search : UISearchBar = {
@@ -80,7 +77,7 @@ class ThoughtsView : UIView {
         let bt = UIButton()
         bt.backgroundColor = .clear
         bt.layer.cornerRadius = 2
-        bt.setImage(#imageLiteral(resourceName: "toDo"), for: .normal)
+        bt.setImage(#imageLiteral(resourceName: "thoughts"), for: .normal)
         bt.addTarget(self, action: #selector(action(_:)), for: .touchUpInside)
         bt.translatesAutoresizingMaskIntoConstraints = false
         return bt
@@ -88,25 +85,26 @@ class ThoughtsView : UIView {
     let thoughtsLabel : UILabel = {
         let lbl = UILabel()
         lbl.text = "Thoughts"
-        lbl.font = .boldSystemFont(ofSize: 32)
-        lbl.textColor = UIColor.white.withAlphaComponent(0.99)
+        lbl.font = UIFont(name: "Comfortaa-light", size: 27)
+        lbl.textColor = .white
         return lbl
     }()
     
     let tableView : UITableView = {
         let tb = UITableView()
-        tb.isPagingEnabled = true
         tb.translatesAutoresizingMaskIntoConstraints = false
         tb.separatorStyle = .singleLine
+        tb.separatorColor = .darkGray
+        tb.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tb.showsVerticalScrollIndicator = true
-        tb.allowsSelection = true
-        tb.backgroundColor = .white
+        tb.allowsSelection = false
+        tb.backgroundColor = UIColor(red:0.31, green:0.31, blue:0.31, alpha:1.0)
         
         return tb
     }()
     
-    let tableViewID = "tableVIewIdentifier"
-    
-    let btn3 = WCLShineButton()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 }

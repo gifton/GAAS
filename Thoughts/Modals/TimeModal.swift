@@ -13,11 +13,11 @@ struct TimeModal {
     var day : Int
     var month : Int
     var year : Int
-    func buildTime(_ times : TimeModal) -> UIStackView {
+    func buildTime(_ times : TimeModal, fontSize : Int = 25, highlightColor : UIColor = .mainYellow) -> UIStackView {
         let monthLbl : UILabel = {
             let lbl = UILabel()
             lbl.text = "\(self.month)"
-            lbl.textColor = .mainYellow
+            lbl.textColor = highlightColor
             lbl.backgroundColor = .clear
             
             return lbl
@@ -25,7 +25,7 @@ struct TimeModal {
         let dayYearlbl : UILabel = {
             let lbl = UILabel()
             lbl.text = " | \(times.day) | \(times.year)"
-            lbl.textColor = .lightGray
+            lbl.textColor = .white
             lbl.backgroundColor = .clear
             
             return lbl
