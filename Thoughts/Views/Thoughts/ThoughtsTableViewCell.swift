@@ -18,7 +18,7 @@ class ThoughtsTableViewCell: UITableViewCell {
     
     let cell : UIView = {
         let view = UIView()
-        view.backgroundColor = .darkOverlay
+        view.backgroundColor = UIColor.gray.withAlphaComponent(0.52)
         view.layer.cornerRadius = 5
         return view
     }()
@@ -50,8 +50,8 @@ class ThoughtsTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         let dateLabel = getDate()
-        let date = dateLabel.buildTime(dateLabel)
-        backgroundColor = UIColor(red:0.31, green:0.31, blue:0.31, alpha:1.0)
+        let date = dateLabel.buildTime(dateLabel, fontSize: 22, highlightColor: .mainBlue)
+        backgroundColor = .mutedBlue
         addSubview(cell)
         cell.frame = CGRect(x: 10, y: 10, width: UIScreen.main.bounds.width - 20, height: 120)
         cell.addSubview(date)
@@ -65,7 +65,9 @@ class ThoughtsTableViewCell: UITableViewCell {
         icon.setAnchor(top: cellHeader.topAnchor, leading: cellHeader.leadingAnchor, bottom: cellHeader.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeading: 5, paddingBottom: 0, paddingTrailing: 0)
         topic.setAnchor(top: cellHeader.topAnchor, leading: icon.trailingAnchor, bottom: cellHeader.bottomAnchor, trailing: cellHeader.trailingAnchor, paddingTop: 2, paddingLeading: 10, paddingBottom: 2, paddingTrailing: 10)
         title.setAnchor(top: cellHeader.bottomAnchor, leading: cell.leadingAnchor, bottom: cell.bottomAnchor, trailing: cell.trailingAnchor, paddingTop: 5, paddingLeading: 5, paddingBottom: 25, paddingTrailing: 5)
-        date.setAnchor(top: title.bottomAnchor, leading: nil, bottom: cell.bottomAnchor, trailing: cell.trailingAnchor, paddingTop: 2, paddingLeading: 0, paddingBottom: 2, paddingTrailing: 5)
+        date.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -5).isActive = true
+        date.topAnchor.constraint(equalTo : title.bottomAnchor).isActive = true
+        date.widthAnchor.constraint(equalToConstant: 70).isActive = true
         
         cellHeader.roundCorners(corners: [.topRight, .topLeft], radius: 5)
     }

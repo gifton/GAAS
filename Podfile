@@ -9,6 +9,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'NVActivityIndicatorView'
+pod 'PopupDialog'
   # Pods for Thoughts
 
 end

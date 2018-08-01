@@ -24,14 +24,8 @@ class SignUpViewController : UIViewController, validationComplete {
         self.view = SignUpView(frame: UIScreen.main.bounds)
         
         self.navigationController?.isNavigationBarHidden = true
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
     }
     
-    func testFunc() {
-        print ("test func worked!")
-    }
     
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -142,7 +136,6 @@ extension SignUpView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
     
     @objc func onAddCatClick(_ sender : UIButton) {
         self.addCatagoriesButton.backgroundColor = .red
-        self.addCatagoriesButton.titleLabel?.textColor = .black
         print ("moved to addition section")
         guard let text = self.catagoryField.text else { return }
         self.userCatagories.append(text)

@@ -19,6 +19,7 @@ struct TimeModal {
             lbl.text = "\(self.month)"
             lbl.textColor = highlightColor
             lbl.backgroundColor = .clear
+            lbl.adjustsFontSizeToFitWidth = true
             
             return lbl
         }()
@@ -27,6 +28,7 @@ struct TimeModal {
             lbl.text = " | \(times.day) | \(times.year)"
             lbl.textColor = .white
             lbl.backgroundColor = .clear
+            lbl.adjustsFontSizeToFitWidth = true
             
             return lbl
         }()

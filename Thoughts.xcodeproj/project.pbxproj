@@ -40,8 +40,8 @@
 		D77279D820EE8A7A0062259B /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D720EE8A7A0062259B /* AlertView.swift */; };
 		D77279DA20EE8C500062259B /* Warnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77279D920EE8C500062259B /* Warnings.swift */; };
 		D7C10B6620F44A510068247D /* CatagoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C10B6520F44A510068247D /* CatagoriesCollectionViewCell.swift */; };
-		D7EEC11620ED70C50019589D /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */; };
-		D7EEC11920ED769E0019589D /* ToDoTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11820ED769E0019589D /* ToDoTableController.swift */; };
+		D7EEC11620ED70C50019589D /* ThoughtsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11420ED70C50019589D /* ThoughtsTableViewCell.swift */; };
+		D7EEC11920ED769E0019589D /* ThoughtsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EEC11820ED769E0019589D /* ThoughtsTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +83,8 @@
 		D77279D720EE8A7A0062259B /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D77279D920EE8C500062259B /* Warnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warnings.swift; sourceTree = "<group>"; };
 		D7C10B6520F44A510068247D /* CatagoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoriesCollectionViewCell.swift; sourceTree = "<group>"; };
-		D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
-		D7EEC11820ED769E0019589D /* ToDoTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableController.swift; sourceTree = "<group>"; };
+		D7EEC11420ED70C50019589D /* ThoughtsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsTableViewCell.swift; sourceTree = "<group>"; };
+		D7EEC11820ED769E0019589D /* ThoughtsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsTableController.swift; sourceTree = "<group>"; };
 		E24ED3B606D98FFFF4CF3C0A /* Pods_Thoughts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thoughts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,7 +131,7 @@
 		D731E67A210A4E34005E36D7 /* Thoughts */ = {
 			isa = PBXGroup;
 			children = (
-				D7EEC11420ED70C50019589D /* ToDoTableViewCell.swift */,
+				D7EEC11420ED70C50019589D /* ThoughtsTableViewCell.swift */,
 				D73FDA2420EA26CE006C25BB /* ThoughtsView.swift */,
 				D731E678210A4E2B005E36D7 /* NewThought.swift */,
 			);
@@ -195,7 +195,7 @@
 			children = (
 				D77279CB20ED9DE50062259B /* SignUpViewController.swift */,
 				D73FDA1920EA15C1006C25BB /* ThoughtsController.swift */,
-				D7EEC11820ED769E0019589D /* ToDoTableController.swift */,
+				D7EEC11820ED769E0019589D /* ThoughtsTableController.swift */,
 				D731E61A20F68ADD005E36D7 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
@@ -368,14 +368,14 @@
 				D73FDA1E20EA229E006C25BB /* ToDoModal.swift in Sources */,
 				D73FDA2320EA238E006C25BB /* ThoughtsModal.swift in Sources */,
 				D77279CC20ED9DE50062259B /* SignUpViewController.swift in Sources */,
-				D7EEC11920ED769E0019589D /* ToDoTableController.swift in Sources */,
+				D7EEC11920ED769E0019589D /* ThoughtsTableController.swift in Sources */,
 				D77279D420EE7CBB0062259B /* SignUp.swift in Sources */,
 				D77279D620EE800A0062259B /* SignUpView.swift in Sources */,
 				D73FDA0420EA1371006C25BB /* ViewController.swift in Sources */,
 				D731E61D20F68AF1005E36D7 /* WelcomeBack.swift in Sources */,
 				D73FDA2120EA22FD006C25BB /* Catagories.swift in Sources */,
 				D73FDA0220EA1371006C25BB /* AppDelegate.swift in Sources */,
-				D7EEC11620ED70C50019589D /* ToDoTableViewCell.swift in Sources */,
+				D7EEC11620ED70C50019589D /* ThoughtsTableViewCell.swift in Sources */,
 				D731E61F20F68AFD005E36D7 /* WelcomeUser.swift in Sources */,
 				D77279D120EE7C5B0062259B /* Login.swift in Sources */,
 				D731E61B20F68ADD005E36D7 /* WelcomeViewController.swift in Sources */,

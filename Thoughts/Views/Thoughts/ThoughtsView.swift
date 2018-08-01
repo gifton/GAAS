@@ -13,11 +13,18 @@ import WCLShineButton
 class ThoughtsView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .mainBlue
+        backgroundColor = .mainBlueHalf
+        let swipeUp = UIPanGestureRecognizer(target: self, action: #selector(removeView(_:)))
+        addGestureRecognizer(swipeUp)
+        
         setupSkeleton()
     }
     
-    let sampleData = ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "toDo"), color: .mainYellow)
+    @objc func removeView(_ sender: Any) {
+        print ("oj okay")
+    }
+    
+    let sampleData = [ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "toDo"), color: .mainYellow), ThoughtsModal.init(catagory: Catagories.math, title: "Rectified linear Units", body: "fuckity mcfuck", avatar: #imageLiteral(resourceName: "thoughts"), color: .mainOrange), ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "toDo"), color: .mainYellow), ThoughtsModal.init(catagory: Catagories.math, title: "Rectified linear Units", body: "fuckity mcfuck", avatar: #imageLiteral(resourceName: "thoughts"), color: .mainOrange), ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "toDo"), color: .mainYellow), ThoughtsModal.init(catagory: Catagories.math, title: "Rectified linear Units", body: "fuckity mcfuck", avatar: #imageLiteral(resourceName: "thoughts"), color: .mainOrange)]
     
     let tableViewID = "tableVIewIdentifier"
     
@@ -54,14 +61,10 @@ class ThoughtsView : UIView {
         helloView.addSubview(date)
         date.setAnchor(top: safeTopAnchor, leading: nil, bottom: nil, trailing: helloView.trailingAnchor, paddingTop: 0, paddingLeading: 0, paddingBottom: 0, paddingTrailing: 10)
     }
-    @objc func action(_ sender: WCLShineButton) {
-        print("Clicked \(sender.isSelected)")
-        print("fwk")
-    }
     
     let helloView : UIView = {
         let view = UIView()
-        view.backgroundColor = .darkOverlay
+        view.backgroundColor = .mutedBlue
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setHeightWidth(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 6.5)
         return view
@@ -78,6 +81,7 @@ class ThoughtsView : UIView {
         bt.backgroundColor = .clear
         bt.layer.cornerRadius = 2
         bt.setImage(#imageLiteral(resourceName: "thoughts"), for: .normal)
+        bt.imageView?.tintColor = .red
         bt.addTarget(self, action: #selector(action(_:)), for: .touchUpInside)
         bt.translatesAutoresizingMaskIntoConstraints = false
         return bt
@@ -94,11 +98,12 @@ class ThoughtsView : UIView {
         let tb = UITableView()
         tb.translatesAutoresizingMaskIntoConstraints = false
         tb.separatorStyle = .singleLine
-        tb.separatorColor = .darkGray
+        tb.separatorColor = .mainGray
         tb.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tb.showsVerticalScrollIndicator = true
+        
         tb.allowsSelection = false
-        tb.backgroundColor = UIColor(red:0.31, green:0.31, blue:0.31, alpha:1.0)
+        tb.backgroundColor = .white
         
         return tb
     }()
