@@ -16,6 +16,12 @@
 		D731E6692104AA3C005E36D7 /* ThoughtAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E6682104AA3C005E36D7 /* ThoughtAddition.swift */; };
 		D731E67721089C75005E36D7 /* Comfortaa in Resources */ = {isa = PBXBuildFile; fileRef = D731E66A21089A70005E36D7 /* Comfortaa */; };
 		D731E679210A4E2B005E36D7 /* NewThought.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E678210A4E2B005E36D7 /* NewThought.swift */; };
+		D731E67C21127673005E36D7 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E67B21127673005E36D7 /* CardViewController.swift */; };
+		D731E67F211276C1005E36D7 /* cardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E67E211276C1005E36D7 /* cardView.swift */; };
+		D731E681211276D4005E36D7 /* imageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E680211276D4005E36D7 /* imageCard.swift */; };
+		D731E68321127779005E36D7 /* EmojiOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E68221127779005E36D7 /* EmojiOverlay.swift */; };
+		D731E68521128534005E36D7 /* catagoriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E68421128534005E36D7 /* catagoriesCollectionViewController.swift */; };
+		D731E68721128556005E36D7 /* CatagoriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731E68621128556005E36D7 /* CatagoriesCollectionViewController.swift */; };
 		D73FDA0220EA1371006C25BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0120EA1371006C25BB /* AppDelegate.swift */; };
 		D73FDA0420EA1371006C25BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FDA0320EA1371006C25BB /* ViewController.swift */; };
 		D73FDA0720EA1371006C25BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73FDA0520EA1371006C25BB /* Main.storyboard */; };
@@ -56,6 +62,12 @@
 		D731E6682104AA3C005E36D7 /* ThoughtAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtAddition.swift; sourceTree = "<group>"; };
 		D731E66A21089A70005E36D7 /* Comfortaa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Comfortaa; path = ../../../../../../Downloads/Comfortaa; sourceTree = "<group>"; };
 		D731E678210A4E2B005E36D7 /* NewThought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewThought.swift; sourceTree = "<group>"; };
+		D731E67B21127673005E36D7 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		D731E67E211276C1005E36D7 /* cardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardView.swift; sourceTree = "<group>"; };
+		D731E680211276D4005E36D7 /* imageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCard.swift; sourceTree = "<group>"; };
+		D731E68221127779005E36D7 /* EmojiOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiOverlay.swift; sourceTree = "<group>"; };
+		D731E68421128534005E36D7 /* catagoriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catagoriesCollectionViewController.swift; sourceTree = "<group>"; };
+		D731E68621128556005E36D7 /* CatagoriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoriesCollectionViewController.swift; sourceTree = "<group>"; };
 		D73FD9FE20EA1371006C25BB /* Thoughts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73FDA0120EA1371006C25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73FDA0320EA1371006C25BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,8 +146,20 @@
 				D7EEC11420ED70C50019589D /* ThoughtsTableViewCell.swift */,
 				D73FDA2420EA26CE006C25BB /* ThoughtsView.swift */,
 				D731E678210A4E2B005E36D7 /* NewThought.swift */,
+				D731E68621128556005E36D7 /* CatagoriesCollectionViewController.swift */,
 			);
 			path = Thoughts;
+			sourceTree = "<group>";
+		};
+		D731E67D211276B0005E36D7 /* card */ = {
+			isa = PBXGroup;
+			children = (
+				D731E67B21127673005E36D7 /* CardViewController.swift */,
+				D731E67E211276C1005E36D7 /* cardView.swift */,
+				D731E680211276D4005E36D7 /* imageCard.swift */,
+				D731E68221127779005E36D7 /* EmojiOverlay.swift */,
+			);
+			path = card;
 			sourceTree = "<group>";
 		};
 		D73FD9F520EA1371006C25BB = {
@@ -197,6 +221,8 @@
 				D73FDA1920EA15C1006C25BB /* ThoughtsController.swift */,
 				D7EEC11820ED769E0019589D /* ThoughtsTableController.swift */,
 				D731E61A20F68ADD005E36D7 /* WelcomeViewController.swift */,
+				D731E68421128534005E36D7 /* catagoriesCollectionViewController.swift */,
+				D731E67D211276B0005E36D7 /* card */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -313,17 +339,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Thoughts/Pods-Thoughts-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/WCLShineButton/WCLShineButton.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCLShineButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -360,26 +390,32 @@
 				D73FDA2E20EAF19B006C25BB /* Splash.swift in Sources */,
 				D73FDA1420EA14DA006C25BB /* TabBarController.swift in Sources */,
 				D731E66720FE6666005E36D7 /* Thoughts.xcdatamodeld in Sources */,
+				D731E67F211276C1005E36D7 /* cardView.swift in Sources */,
+				D731E68521128534005E36D7 /* catagoriesCollectionViewController.swift in Sources */,
 				D73FDA1A20EA15C1006C25BB /* ThoughtsController.swift in Sources */,
 				D77279D820EE8A7A0062259B /* AlertView.swift in Sources */,
 				D77279DA20EE8C500062259B /* Warnings.swift in Sources */,
+				D731E681211276D4005E36D7 /* imageCard.swift in Sources */,
 				D77279CF20EE7C180062259B /* FireBaseNetwork.swift in Sources */,
 				D731E6692104AA3C005E36D7 /* ThoughtAddition.swift in Sources */,
 				D73FDA1E20EA229E006C25BB /* ToDoModal.swift in Sources */,
 				D73FDA2320EA238E006C25BB /* ThoughtsModal.swift in Sources */,
 				D77279CC20ED9DE50062259B /* SignUpViewController.swift in Sources */,
 				D7EEC11920ED769E0019589D /* ThoughtsTableController.swift in Sources */,
+				D731E68321127779005E36D7 /* EmojiOverlay.swift in Sources */,
 				D77279D420EE7CBB0062259B /* SignUp.swift in Sources */,
 				D77279D620EE800A0062259B /* SignUpView.swift in Sources */,
 				D73FDA0420EA1371006C25BB /* ViewController.swift in Sources */,
 				D731E61D20F68AF1005E36D7 /* WelcomeBack.swift in Sources */,
 				D73FDA2120EA22FD006C25BB /* Catagories.swift in Sources */,
 				D73FDA0220EA1371006C25BB /* AppDelegate.swift in Sources */,
+				D731E67C21127673005E36D7 /* CardViewController.swift in Sources */,
 				D7EEC11620ED70C50019589D /* ThoughtsTableViewCell.swift in Sources */,
 				D731E61F20F68AFD005E36D7 /* WelcomeUser.swift in Sources */,
 				D77279D120EE7C5B0062259B /* Login.swift in Sources */,
 				D731E61B20F68ADD005E36D7 /* WelcomeViewController.swift in Sources */,
 				D731E679210A4E2B005E36D7 /* NewThought.swift in Sources */,
+				D731E68721128556005E36D7 /* CatagoriesCollectionViewController.swift in Sources */,
 				D7C10B6620F44A510068247D /* CatagoriesCollectionViewCell.swift in Sources */,
 				D73FDA2C20EA3BA2006C25BB /* TimeModal.swift in Sources */,
 				D73FDA2520EA26CE006C25BB /* ThoughtsView.swift in Sources */,

@@ -18,23 +18,25 @@ class ThoughtsTableViewCell: UITableViewCell {
     
     let cell : UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.gray.withAlphaComponent(0.52)
+        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
         view.layer.cornerRadius = 5
         return view
     }()
     let cellHeader : UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.mainGrayHalf.withAlphaComponent(0.4)
+        view.backgroundColor = UIColor.offWhite.withAlphaComponent(0.75)
         return view
     }()
     let icon : UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.setHeightWidth(width: 40, height: 40)
+        iv.setHeightWidth(width: 30, height: 30)
         return iv
     }()
     let title : UILabel = {
         let lbl = UILabel()
+        lbl.textColor = .offWhite
+        lbl.font = UIFont.systemFont(ofSize: 12.0)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -42,16 +44,17 @@ class ThoughtsTableViewCell: UITableViewCell {
         let lbl = EdgeInsetLabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.addBorders(edges: [.left], color: .darkOverlay)
+        lbl.font = UIFont.boldSystemFont(ofSize: 22)
         lbl.leftTextInset = 10
         return lbl
     }()
     
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         let dateLabel = getDate()
-        let date = dateLabel.buildTime(dateLabel, fontSize: 22, highlightColor: .mainBlue)
-        backgroundColor = .mutedBlue
+        let date = dateLabel.buildTime(dateLabel, fontSize: 22, highlightColor: .mainGreen)
+        backgroundColor = UIColor.gray.withAlphaComponent(0.3)
         addSubview(cell)
         cell.frame = CGRect(x: 10, y: 10, width: UIScreen.main.bounds.width - 20, height: 120)
         cell.addSubview(date)
@@ -62,7 +65,7 @@ class ThoughtsTableViewCell: UITableViewCell {
         cellHeader.addSubview(topic)
         
         cellHeader.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 20, height: 40)
-        icon.setAnchor(top: cellHeader.topAnchor, leading: cellHeader.leadingAnchor, bottom: cellHeader.bottomAnchor, trailing: nil, paddingTop: 0, paddingLeading: 5, paddingBottom: 0, paddingTrailing: 0)
+        icon.setAnchor(top: cellHeader.topAnchor, leading: cellHeader.leadingAnchor, bottom: cellHeader.bottomAnchor, trailing: nil, paddingTop: 5, paddingLeading: 10, paddingBottom: 5, paddingTrailing: 0)
         topic.setAnchor(top: cellHeader.topAnchor, leading: icon.trailingAnchor, bottom: cellHeader.bottomAnchor, trailing: cellHeader.trailingAnchor, paddingTop: 2, paddingLeading: 10, paddingBottom: 2, paddingTrailing: 10)
         title.setAnchor(top: cellHeader.bottomAnchor, leading: cell.leadingAnchor, bottom: cell.bottomAnchor, trailing: cell.trailingAnchor, paddingTop: 5, paddingLeading: 5, paddingBottom: 25, paddingTrailing: 5)
         date.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -5).isActive = true

@@ -1,4 +1,5 @@
 PODS:
+  - DynamicBlurView (2.0.2)
   - Firebase/Auth (5.4.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.2)
@@ -37,6 +38,8 @@ PODS:
   - NVActivityIndicatorView (4.2.1):
     - NVActivityIndicatorView/Presenter (= 4.2.1)
   - NVActivityIndicatorView/Presenter (4.2.1)
+  - PopupDialog (0.7.1):
+    - DynamicBlurView (~> 2.0)
   - WCLShineButton (1.0.7)
 
 DEPENDENCIES:
@@ -44,10 +47,12 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Storage
   - NVActivityIndicatorView
+  - PopupDialog
   - WCLShineButton
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - DynamicBlurView
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -58,9 +63,11 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - NVActivityIndicatorView
+    - PopupDialog
     - WCLShineButton
 
 SPEC CHECKSUMS:
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   Firebase: d66f4f29c23f22d96808d9abc174d81d8eee968f
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
   FirebaseAuth: 096e457cdd4274412a66c4a35874787e411f5a03
@@ -71,8 +78,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 8068ba3ad39cb44cbaab25d89ff2546b3f092681
+  PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
   WCLShineButton: d8b979b6f6f9f6709f9e241e6e1a4712a1a9b36b
 
-PODFILE CHECKSUM: d1a3d653fda05efe6b3e99f3a6605e5d87b063bc
+PODFILE CHECKSUM: 29c4eb4418faa776cbfc330d325a485376495485
 
 COCOAPODS: 1.5.3

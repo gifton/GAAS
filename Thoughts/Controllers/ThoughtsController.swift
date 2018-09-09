@@ -21,8 +21,17 @@ class ThoughtsController : UIViewController {
 extension ThoughtsView {
     @objc func action(_ sender: UIButton) {
         add.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: 5)
-        self.addSubview(AddNewThoughtView(frame: CGRect(x: 20, y: 50, width: ScreenSize.SCREEN_WIDTH - 40 , height: ScreenSize.SCREEN_HEIGHT - 100)))
-        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.addSubview(AddNewThoughtView(frame: CGRect(x: 20, y: 50, width: ScreenSize.SCREEN_WIDTH - 40 , height: ScreenSize.SCREEN_HEIGHT - 100)))
+        }) { (true) in
+            print ("oh okay okya")
+        }
         print("fwk")
+    }
+    @objc func removeAddView(_ sender: UIButton) {
+        self.removeView(addNewThought.self)
+    }
+    @objc func removeView(_ sender: Any) {
+        print ("oj okay")
     }
 }

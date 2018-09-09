@@ -19,5 +19,83 @@
             landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thoughts/Views/Thoughts/NewThought.swift"
+            timestampString = "555091086.384935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "thoughtText"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thoughts.AddNewThoughtView.init(frame: __C.CGRect) -&gt; Thoughts.AddNewThoughtView"
+                  moduleName = "Thoughts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Developer/projects/swift/GAAS/Thoughts/Views/Thoughts/NewThought.swift"
+                  timestampString = "554933199.152095"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "660">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "variable initialization expression of Thoughts.AddNewThoughtView.thoughtText : __ObjC.UITextView"
+                  moduleName = "Thoughts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Developer/projects/swift/GAAS/Thoughts/Views/Thoughts/NewThought.swift"
+                  timestampString = "554933199.155234"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __ObjC.UITextView in variable initialization expression of Thoughts.AddNewThoughtView.thoughtText : __ObjC.UITextView"
+                  moduleName = "Thoughts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Developer/projects/swift/GAAS/Thoughts/Views/Thoughts/NewThought.swift"
+                  timestampString = "554933199.157567"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thoughts.AddNewThoughtView.thoughtText.getter : __ObjC.UITextView"
+                  moduleName = "Thoughts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev/Developer/projects/swift/GAAS/Thoughts/Views/Thoughts/NewThought.swift"
+                  timestampString = "554933199.159811"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "109">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

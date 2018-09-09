@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-import WCLShineButton
+import PopupDialog
+
 
 class ThoughtsView : UIView {
     override init(frame: CGRect) {
@@ -19,12 +20,8 @@ class ThoughtsView : UIView {
         
         setupSkeleton()
     }
-    
-    @objc func removeView(_ sender: Any) {
-        print ("oj okay")
-    }
-    
-    let sampleData = [ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "toDo"), color: .mainYellow), ThoughtsModal.init(catagory: Catagories.math, title: "Rectified linear Units", body: "fuckity mcfuck", avatar: #imageLiteral(resourceName: "thoughts"), color: .mainOrange), ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "toDo"), color: .mainYellow), ThoughtsModal.init(catagory: Catagories.math, title: "Rectified linear Units", body: "fuckity mcfuck", avatar: #imageLiteral(resourceName: "thoughts"), color: .mainOrange), ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "toDo"), color: .mainYellow), ThoughtsModal.init(catagory: Catagories.math, title: "Rectified linear Units", body: "fuckity mcfuck", avatar: #imageLiteral(resourceName: "thoughts"), color: .mainOrange)]
+        
+    let sampleData = [ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "toDo"), color: .mainYellow), ThoughtsModal.init(catagory: Catagories.math, title: "Rectified linear Units", body: "fuckity mcfuck", avatar: #imageLiteral(resourceName: "pen-light"), color: .mainOrange), ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "icon-yellow"), color: .mainYellow), ThoughtsModal.init(catagory: Catagories.math, title: "Rectified linear Units", body: "fuckity mcfuck", avatar: #imageLiteral(resourceName: "thoughts"), color: .mainOrange), ThoughtsModal.init(catagory: Catagories.design, title: "How colors work", body: "fuckity fuck", avatar: #imageLiteral(resourceName: "catagories"), color: .mainYellow), ThoughtsModal.init(catagory: Catagories.math, title: "Rectified linear Units", body: "fuckity mcfuck", avatar: #imageLiteral(resourceName: "icon-yellow"), color: .mainOrange)]
     
     let tableViewID = "tableVIewIdentifier"
     
@@ -97,12 +94,10 @@ class ThoughtsView : UIView {
     let tableView : UITableView = {
         let tb = UITableView()
         tb.translatesAutoresizingMaskIntoConstraints = false
-        tb.separatorStyle = .singleLine
-        tb.separatorColor = .mainGray
-        tb.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tb.separatorStyle = .none
         tb.showsVerticalScrollIndicator = true
         
-        tb.allowsSelection = false
+        tb.allowsSelection = true
         tb.backgroundColor = .white
         
         return tb
